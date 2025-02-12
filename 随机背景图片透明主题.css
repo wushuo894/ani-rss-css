@@ -100,6 +100,14 @@ html.dark .el-table {
     --el-table-header-bg-color: rgba(29, 30, 31, 0.5);
 }
 
+.el-popover {
+    --el-bg-color-overlay: rgba(255, 255, 255, 0.5);
+}
+
+html.dark .el-popover {
+    --el-bg-color-overlay: rgba(29, 30, 31, 0.5);
+}
+
 /**
 折叠菜单
  */
