@@ -67,6 +67,10 @@ html.dark .el-input__wrapper {
     background-color: rgba(255, 255, 255, 0.8);
 }
 
+.el-select__placeholder{
+    z-index: auto;
+}
+
 html.dark .el-select__wrapper {
     background-color: rgba(29, 30, 31, 0.8);
 }
@@ -80,6 +84,20 @@ html.dark .el-select__wrapper {
 
 html.dark .el-dialog {
     --el-dialog-bg-color: rgba(29, 30, 31, 0.9);
+}
+
+/**
+表格
+ */
+.el-table {
+    --el-table-header-bg-color: rgba(255, 255, 255, 0.5);
+    --el-table-tr-bg-color: none;
+    --el-table-bg-color: none;
+    margin-top: 8px;
+}
+
+html.dark .el-table {
+    --el-table-header-bg-color: rgba(29, 30, 31, 0.5);
 }
 
 /**
