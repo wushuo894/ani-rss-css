@@ -1,3 +1,6 @@
+/**
+随机背景图片透明浅色主题
+ */
 body::after {
     content: "";
     position: fixed;
