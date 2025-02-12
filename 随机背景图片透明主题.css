@@ -1,5 +1,5 @@
 /**
-随机背景图片透明浅色主题
+随机背景图片透明主题
  */
 body::after {
     content: "";
@@ -22,11 +22,20 @@ body::after {
     }
 }
 
+
+html.dark {
+    --el-bg-color: rgba(29, 30, 31, 0.8);
+}
+
 /**
 卡片
  */
 .el-card {
     --el-card-bg-color: rgba(255, 255, 255, 0.8);
+}
+
+html.dark .el-card {
+    --el-card-bg-color: rgba(29, 30, 31, 0.8);
 }
 
 /**
@@ -36,11 +45,19 @@ body::after {
     background-color: rgba(255, 255, 255, 0.8);
 }
 
+html.dark .el-button.is-text:not(.is-disabled).is-has-bg {
+    background-color: rgba(29, 30, 31, 0.8);
+}
+
 /**
 输入框
  */
 .el-input__wrapper {
     background-color: rgba(255, 255, 255, 0.8);
+}
+
+html.dark .el-input__wrapper {
+    background-color: rgba(29, 30, 31, 0.8);
 }
 
 /**
@@ -50,12 +67,8 @@ body::after {
     background-color: rgba(255, 255, 255, 0.8);
 }
 
-/**
-折叠菜单
- */
-.el-collapse {
-    --el-collapse-header-bg-color: none;
-    --el-collapse-content-bg-color: none;
+html.dark .el-select__wrapper {
+    background-color: rgba(29, 30, 31, 0.8);
 }
 
 /**
@@ -63,4 +76,16 @@ body::after {
  */
 .el-dialog {
     --el-dialog-bg-color: rgba(255, 255, 255, 0.9);
+}
+
+html.dark .el-dialog {
+    --el-dialog-bg-color: rgba(29, 30, 31, 0.9);
+}
+
+/**
+折叠菜单
+ */
+.el-collapse {
+    --el-collapse-header-bg-color: none;
+    --el-collapse-content-bg-color: none;
 }
