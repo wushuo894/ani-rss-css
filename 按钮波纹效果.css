@@ -1,0 +1,28 @@
+button {
+    position: relative;
+    border-radius: 4px;
+    outline: 0;
+    border: 0;
+    cursor: pointer;
+    overflow: hidden;
+    transition: background-color .25s;
+}
+
+button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: radial-gradient(circle, #ccc 10%, transparent 10.1%);
+    transform: scale(10);
+    opacity: 0;
+    transition: all .6s;
+}
+
+button:active::after {
+    transform: scale(0);
+    opacity: .5;
+    transition: 0s;
+}
