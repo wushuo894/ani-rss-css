@@ -1,0 +1,80 @@
+#login-page img {
+    content: url(https://anime.bang-dream.com/mygo/wordpress/wp-content/themes/mygo_v1/assets/images/common/logo.svg);
+    width: 180px;
+    object-fit: fill;
+}
+
+#login-page h2 {
+    display: none;
+}
+
+* {
+    --el-color-primary: rgba(49, 130, 179, 255);
+}
+
+
+/**
+输入框
+ */
+.el-input__wrapper {
+    box-shadow: none;
+    border-radius: 0;
+    border-bottom: solid rgba(49, 130, 179, 255);
+}
+
+.el-input.is-disabled .el-input__wrapper{
+    box-shadow: none;
+}
+
+.el-input__wrapper:hover, .el-input__wrapper:focus {
+    box-shadow: none;
+    border-radius: 0;
+    border-bottom: solid rgba(49, 130, 179, 0.8);
+}
+
+.el-input, .el-select__wrapper.is-focused, .el-select__wrapper.is-hovering:not(.is-focused) {
+    --el-input-focus-border-color: none;
+    box-shadow: none;
+}
+
+.el-input-number .el-input__wrapper {
+    border-bottom: none;
+    border-radius: var(--el-input-border-radius, var(--el-border-radius-base));
+    box-shadow: 0 0 0 1px var(--el-input-border-color, var(--el-border-color)) inset;
+}
+
+.el-input-number .el-input__wrapper:hover {
+    box-shadow: 0 0 0 1px var(--el-input-hover-border-color) inset;
+}
+
+.el-input-number .el-input__wrapper:focus {
+    box-shadow: 0 0 0 1px var(--el-input-hover-border-color) inset;
+}
+
+.el-button.is-text:not(.is-disabled).is-has-bg {
+    background-color: rgba(49, 130, 179, 255);
+}
+
+/**
+悬浮时颜色变浅
+ */
+.el-button.is-text:not(.is-disabled).is-has-bg:hover {
+    background-color: rgba(49, 130, 179, 0.8);
+}
+
+.el-button.is-text {
+    color: white;
+}
+
+/**
+下拉框
+ */
+.el-select__wrapper {
+    border-radius: 0;
+    box-shadow: none;
+}
+
+
+.el-select {
+    border-bottom: solid rgba(49, 130, 179, 255);
+}
