@@ -156,3 +156,18 @@ html.dark .el-select__wrapper {
 h2 {
     color: #fff;
 }
+
+/**
+开关
+ */
+.el-switch__core, .el-switch__core .el-switch__action {
+    border-radius: 0;
+}
+
+/**
+标签
+ */
+.el-tag, .el-tag .el-icon {
+    border-radius: 0;
+}
+
