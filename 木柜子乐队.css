@@ -85,6 +85,9 @@ html.dark .el-input__wrapper {
 
 .el-button {
     border-radius: 0;
+}
+
+.el-button:not(.is-disabled) {
     box-shadow: 0 2px 10px rgba(11, 38, 54, .15);
 }
 
