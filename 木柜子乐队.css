@@ -34,7 +34,7 @@ body::after {
 }
 
 * {
-    --el-color-primary: rgba(49, 130, 179, 255);
+    --el-color-primary: #38b;
 }
 
 /**
@@ -43,7 +43,7 @@ body::after {
 .el-input__wrapper {
     box-shadow: none;
     border-radius: 0;
-    border-bottom: solid rgba(49, 130, 179, 255);
+    border-bottom: solid #38b;
 }
 
 html.dark .el-input__wrapper {
@@ -61,7 +61,7 @@ html.dark .el-input__wrapper {
 .el-input__wrapper:hover, .el-input__wrapper.is-focus {
     box-shadow: none;
     border-radius: 0;
-    border-bottom: solid white;
+    border-bottom: solid #0B2636;
 }
 
 .el-input, .el-select__wrapper.is-focused, .el-select__wrapper.is-hovering:not(.is-focused) {
@@ -92,7 +92,7 @@ html.dark .el-input__wrapper {
 }
 
 .el-button.is-text:not(.is-disabled).is-has-bg {
-    background-color: rgba(49, 130, 179, 255);
+    background-color: #38b;
 }
 
 /**
@@ -120,7 +120,7 @@ html.dark .el-select__wrapper {
 
 
 .el-select {
-    border-bottom: solid rgba(49, 130, 179, 255);
+    border-bottom: solid #38b;
 }
 
 .el-dialog {
