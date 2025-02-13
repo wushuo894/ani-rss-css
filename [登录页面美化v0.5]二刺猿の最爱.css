@@ -1,0 +1,146 @@
+/* 登录页面 */
+/* 登录页面背景图和首页分开 */
+/* 支持jpg、png、gif、webp格式 */
+body:has(#login-page)::after{filter: blur(15px);transform: scale(1.08);content: "";position: fixed;inset: 0;z-index: -40;}
+@media (orientation: landscape) {body:has(#login-page)::after{background: url(https://api.imlazy.ink/img) center/cover no-repeat;}}
+@media (orientation: portrait) {body:has(#login-page)::after{background: url(https://api.imlazy.ink/img-phone) center/cover no-repeat;}}
+/* ——————不需要可删除—————— */
+#login-page img {
+  /* 头图，可自行更改,最好宽高一致，否则会拉伸 */
+  content: url(https://pic1.imgdb.cn/item/67acf761d0e0a243d4feb01d.webp);
+  width:100%;
+  height:100%;
+  border-radius:50%;
+  animation: YukigeShiki 16s infinite ease;/* 头图外发光放大 */
+}
+@keyframes YukigeShiki {
+  0%,100% {
+      box-shadow: 0 0 30px 0px var(--el-color-primary);
+  }
+  50% {
+      box-shadow: 0 0 50px 2px var(--el-color-primary);
+  }
+}
+#login-page{
+  transform: scale(1.30);/* 整体放大1.3 */
+  max-height:85%;
+  will-change: transform;
+}
+#login-page img,
+#login-page .el-button.is-text.is-has-bg,
+#login-page .el-input__wrapper,
+div[style="margin-bottom: 16px;"]{
+  user-select: none;
+}
+#login-page h2{display:none}
+/* 用户名&密码&登录键 */
+#login-page .el-input__wrapper,
+#login-page .el-button.is-text.is-has-bg{
+  border-radius: 30px;
+  box-shadow:0 0 20px 0px color-mix(in srgb, var(--el-color-primary) 30%, transparent);/* 外发光透明度 */
+  background-color: #ffffff9c;
+}
+#login-page img, 
+#login-page .el-form-item,
+#login-page .el-button.is-text.is-has-bg,
+#login-page .el-form .el-checkbox,
+#login-page .el-form .el-checkbox.is-checked{
+  transition: all .22s ease;
+  transform: scale(1.00);/* 鼠标悬停放大 */
+}
+#login-page img:hover, 
+#login-page .el-form-item:hover{
+  transform: scale(1.06);/* 鼠标悬停放大 */
+}
+#login-page .el-button.is-text.is-has-bg:hover,
+#login-page .el-form .el-checkbox:hover{
+  transform: scale(1.08);/* 鼠标悬停放大 */
+}
+#login-page .el-form .el-checkbox.is-checked:hover{
+  transform: scale(1.1);/* 鼠标悬停放大 */
+}
+#login-page img:active {
+  transition: transform .28s ease;
+  transform: scale(0.94);/* 鼠标按下缩小 */
+}
+#login-page .el-button.is-text.is-has-bg:active,
+#login-page .el-form .el-checkbox:active,
+#login-page .el-form .el-checkbox.is-checked:active{
+  transition: transform .2s ease;
+  transform: scale(0.94);/* 鼠标按下缩小 */
+}
+#login-page .el-input__inner::placeholder,
+#login-page .el-button.is-text.is-has-bg,
+#login-page .el-input__inner {
+  color: var(--el-color-primary);
+}
+#login-page .el-form.el-form--default.el-form--label-right:has(> div[style="display: flex; width: 100%; justify-content: space-between; align-items: center;"]) div {
+  justify-content: center !important;
+}
+/* v1.1.302更新后的记住密码修改 */
+#login-page .el-button.is-text.is-has-bg{
+  position:relative;
+  left:7px;
+}
+#login-page .el-form .el-checkbox{
+  position:relative;
+  left:-5px;
+  background:#ffffff90;
+  padding: 0px 9px;
+  border-radius: 50px;
+  transform: scale(0.9);
+  --el-checkbox-bg-color:#00000000;
+  --el-checkbox-input-border:#00000000;
+  --el-checkbox-checked-bg-color:#00000000;
+  --el-checkbox-checked-icon-color:#00000000;
+}
+#login-page .el-form .el-checkbox.is-checked{
+  background:var(--el-color-primary);
+  opacity: 0.85;
+  transform: scale(1);
+  box-shadow: 0 0 10px 0px var(--el-color-primary);
+}
+#login-page .el-form .el-checkbox__label{
+    display: none !important;
+}
+#login-page .el-form .el-checkbox__input.is-checked{
+    display: inline-block !important;
+}
+/* 底部 */
+div a[href="https://docs.wushuo.top"],
+div a[href="https://github.com/wushuo894/ani-rss"],
+div[style="margin-bottom: 16px;"]{
+    color: var(--el-color-primary);
+    z-index:1;
+}
+div[style="margin-bottom: 16px;"]{
+  background:#ffffff90;
+  padding: 4px 10px;
+  border-radius: 30px;
+  opacity: 0.2;
+  transition: all .3s ease;
+  box-shadow: 0 0 30px 0px color-mix(in srgb, var(--el-color-primary) 60%, transparent);/* 外发光透明度 */
+}
+div[style="margin-bottom: 16px;"]:hover {
+  padding: 8px 20px;
+  opacity: 1;
+}
+div[style="margin-bottom: 16px;"] a {
+    text-decoration: none;
+}
+@media (orientation: portrait) {
+  div a[href="https://docs.wushuo.top"],
+  div a[href="https://github.com/wushuo894/ani-rss"],
+  div[style="margin-bottom: 16px;"]{
+      display: none;/* 手机端隐藏底部 */
+  }
+}
+/* 干掉谷歌那破密码工具白背景（别问，问就是网上找的） */
+input:-webkit-autofill , textarea:-webkit-autofill, select:-webkit-autofill{
+-webkit-text-fill-color: var(--el-color-primary);
+-webkit-box-shadow: 0 0 0px 1000px transparent inset;
+background-color:transparent;
+background-image: none;
+transition: background-color 50000s ease-in-out 0s;
+}
+input {background-color:transparent}
