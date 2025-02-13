@@ -153,37 +153,31 @@ div[style="margin-bottom: 16px;"] {
 }
 
 /* 底部 */
-div a[href="https://docs.wushuo.top"],
-div a[href="https://github.com/wushuo894/ani-rss"],
-div[style="margin-bottom: 16px;"] {
+#link a[href="https://docs.wushuo.top"],
+#link a[href="https://github.com/wushuo894/ani-rss"],
+#link[style="margin-bottom: 16px;"]{
     color: var(--el-color-primary);
-    z-index: 1;
+    z-index:1;
 }
-
-div[style="margin-bottom: 16px;"] {
-    background: #ffffff90;
-    padding: 4px 10px;
-    border-radius: 30px;
-    opacity: 0.2;
-    transition: all .3s ease;
-    box-shadow: 0 0 30px 0 color-mix(in srgb, var(--el-color-primary) 60%, transparent); /* 外发光透明度 */
+#link[style="margin-bottom: 16px;"]{
+  background:#ffffff90;
+  padding: 4px 10px;
+  border-radius: 30px;
+  opacity: 0.2;
+  transition: all .3s ease;
+  box-shadow: 0 0 30px 0px color-mix(in srgb, var(--el-color-primary) 60%, transparent);/* 外发光透明度 */
 }
-
-div[style="margin-bottom: 16px;"]:hover {
-    padding: 8px 20px;
-    opacity: 1;
+#link[style="margin-bottom: 16px;"]:hover {
+  padding: 8px 20px;
+  opacity: 1;
 }
-
-div[style="margin-bottom: 16px;"] a {
+#link[style="margin-bottom: 16px;"] a {
     text-decoration: none;
 }
-
 @media (orientation: portrait) {
-    div a[href="https://docs.wushuo.top"],
-    div a[href="https://github.com/wushuo894/ani-rss"],
-    div[style="margin-bottom: 16px;"] {
-        display: none; /* 手机端隐藏底部 */
-    }
+  #link[style="margin-bottom: 16px;"]{
+      display: none;/* 手机端隐藏底部 */
+  }
 }
 
 /* 干掉谷歌那破密码工具白背景（别问，问就是网上找的） */
