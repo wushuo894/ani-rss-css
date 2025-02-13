@@ -32,6 +32,13 @@ body:has(#login-page)::after {
     animation: YukigeShiki 16s infinite ease; /* 头图外发光放大 */
 }
 
+@media (orientation: portrait) {
+    #login-page img {
+        width: 120px;
+        height: 120px;
+    }
+}
+
 @keyframes YukigeShiki {
     0%, 100% {
         box-shadow: 0 0 30px 0 var(--el-color-primary);
