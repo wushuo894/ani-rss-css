@@ -25,8 +25,8 @@ body:has(#login-page)::after {
 /* ——————不需要可删除—————— */
 #login-page img {
     content: url(https://pic1.imgdb.cn/item/67acf761d0e0a243d4feb01d.webp);
-    width: 180px;
-    height: 180px;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
     object-fit: cover;
     animation: YukigeShiki 16s infinite ease; /* 头图外发光放大 */
@@ -34,8 +34,8 @@ body:has(#login-page)::after {
 
 @media (orientation: portrait) {
     #login-page img {
-        width: 120px;
-        height: 120px;
+        width: 150px;
+        height: 150px;
     }
 }
 
