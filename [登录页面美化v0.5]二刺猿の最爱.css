@@ -12,13 +12,13 @@ body:has(#login-page)::after {
 
 @media (orientation: landscape) {
     body:has(#login-page)::after {
-        background: url(https://api.imlazy.ink/img) center/cover no-repeat;
+        background: url(https://www.loliapi.com/acg/pc/) center/cover no-repeat;
     }
 }
 
 @media (orientation: portrait) {
     body:has(#login-page)::after {
-        background: url(https://api.imlazy.ink/img-phone) center/cover no-repeat;
+        background: url(https://www.loliapi.com/acg/pe/) center/cover no-repeat;
     }
 }
 
