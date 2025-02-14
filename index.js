@@ -7,4 +7,4 @@ let addCSSLink = (href) => {
 }
 
 // 调用函数以添加 CSS 链接
-addCSSLink('https://raw.githack.com/wushuo894/ani-rss-css/main/木柜子乐队.css');
+addCSSLink('https://ani-rss-css.wushuo.top/木柜子乐队.css');
