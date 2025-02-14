@@ -20,7 +20,8 @@ body::after {
     z-index: -50;
     filter: blur(0px); /*背景模糊*/
     transform: scale(1.06);
-    animation: changeBackground 10s infinite;
+    background: url(https://anime.bang-dream.com/mygo/wordpress/wp-content/themes/mygo_v1/assets/images/pc/index/img_kv-1.jpg) center/cover no-repeat;
+    animation: changeBackground 9s infinite alternate;
 }
 
 #login-page img {
