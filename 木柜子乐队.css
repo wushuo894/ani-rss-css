@@ -75,27 +75,55 @@ html.dark .el-input__wrapper {
     box-shadow: 0 0 0 1px var(--el-input-hover-border-color) inset;
 }
 
+/**
+按钮
+ */
+.el-button.is-text {
+    color: var(--el-button-text-color);
+}
+
 .el-button {
     border-radius: 0;
 }
 
-.el-button:not(.is-disabled) {
-    box-shadow: 0 2px 10px rgba(11, 38, 54, .15);
+html.dark .el-button {
+    color: white;
 }
 
-.el-button.is-text:not(.is-disabled).is-has-bg {
+.el-button.el-button--success:not(.is-disabled).is-has-bg {
+    color: white;
+    background-color: var(--el-color-success);
+}
+
+.el-button.el-button--success:not(.is-disabled).is-has-bg:hover {
+    background-color: var(--el-color-success-light-3);
+}
+
+.el-button.el-button--danger:not(.is-disabled).is-has-bg {
+    color: white;
+    background-color: var(--el-color-danger);
+}
+
+.el-button.el-button--danger:not(.is-disabled).is-has-bg:hover {
+    background-color: var(--el-color-danger-light-3);
+}
+
+.el-button.el-button--warning:not(.is-disabled).is-has-bg {
+    color: white;
+    background-color: var(--el-color-warning);
+}
+
+.el-button.el-button--warning:not(.is-disabled).is-has-bg:hover {
+    background-color: var(--el-color-warning-light-3);
+}
+
+.el-button.el-button--primary:not(.is-disabled).is-has-bg {
+    color: white;
     background-color: #38b;
 }
 
-/**
-悬浮时颜色变浅
- */
-.el-button.is-text:not(.is-disabled).is-has-bg:hover {
+.el-button.el-button--primary:not(.is-disabled).is-has-bg:hover {
     background-color: rgba(49, 130, 179, 0.8);
-}
-
-.el-button.is-text {
-    color: white;
 }
 
 /**
@@ -162,4 +190,3 @@ h2 {
 .el-tag, .el-tag .el-icon {
     border-radius: 0;
 }
-
