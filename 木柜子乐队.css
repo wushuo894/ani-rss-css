@@ -190,3 +190,7 @@ h2 {
 .el-tag, .el-tag .el-icon {
     border-radius: 0;
 }
+
+.el-checkbox__inner {
+    border-radius: 0;
+}
