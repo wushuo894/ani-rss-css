@@ -107,11 +107,3 @@ html.dark .el-table {
 html.dark .el-popover {
     --el-bg-color-overlay: rgba(29, 30, 31, 0.5);
 }
-
-/**
-折叠菜单
- */
-.el-collapse {
-    --el-collapse-header-bg-color: none;
-    --el-collapse-content-bg-color: none;
-}
