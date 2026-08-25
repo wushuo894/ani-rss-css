@@ -1,0 +1,271 @@
+/**
+随机背景图片透明主题
+ */
+:root {
+    --ani-rss-bg-desktop: url(https://api.imlazy.ink/img);
+    --ani-rss-bg-portrait: url(https://api.imlazy.ink/img-phone);
+    --ani-rss-bg-blur: 2px;
+    --ani-rss-bg-scale: 1.06;
+    --ani-rss-glass-blur: 14px;
+    --ani-rss-control-blur: 9px;
+}
+
+html {
+    --app-bg-color: transparent !important;
+    --ani-rss-bg-color: #eef3f8;
+    --ani-rss-bg-fallback: linear-gradient(135deg, #eef3f8 0%, #f7f4f8 46%, #e7eef6 100%);
+    --ani-rss-surface: rgba(255, 255, 255, 0.78);
+    --ani-rss-surface-strong: rgba(255, 255, 255, 0.9);
+    --ani-rss-surface-soft: rgba(255, 255, 255, 0.58);
+    --ani-rss-control: rgba(255, 255, 255, 0.74);
+    --ani-rss-control-hover: rgba(255, 255, 255, 0.88);
+    --ani-rss-border: rgba(255, 255, 255, 0.42);
+    --ani-rss-shadow: 0 12px 36px rgba(31, 45, 61, 0.12);
+    --ani-rss-overlay: linear-gradient(135deg, rgba(245, 247, 250, 0.28), rgba(245, 247, 250, 0.1));
+    --ani-rss-title-color: #1f2d3d;
+    --ani-rss-title-muted-color: rgba(31, 45, 61, 0.68);
+    --ani-rss-title-shadow: 0 1px 2px rgba(255, 255, 255, 0.78), 0 8px 24px rgba(31, 45, 61, 0.12);
+    --ani-rss-header-button-bg: rgba(255, 255, 255, 0.58);
+    --ani-rss-header-button-hover: rgba(255, 255, 255, 0.82);
+    --ani-rss-header-button-border: rgba(255, 255, 255, 0.34);
+    --el-bg-color: var(--ani-rss-surface) !important;
+    --el-bg-color-overlay: var(--ani-rss-surface-strong) !important;
+    --el-fill-color-blank: transparent !important;
+    --el-fill-color-light: rgba(255, 255, 255, 0.48) !important;
+    --el-fill-color-lighter: rgba(255, 255, 255, 0.34) !important;
+    --el-border-color: rgba(255, 255, 255, 0.46) !important;
+    --el-border-color-light: rgba(255, 255, 255, 0.36) !important;
+    --el-border-color-extra-light: rgba(255, 255, 255, 0.24) !important;
+}
+
+html.dark {
+    --app-bg-color: transparent !important;
+    --ani-rss-bg-color: #11141a;
+    --ani-rss-bg-fallback: linear-gradient(135deg, #11141a 0%, #1c2029 48%, #12161d 100%);
+    --ani-rss-surface: rgba(29, 30, 31, 0.78);
+    --ani-rss-surface-strong: rgba(29, 30, 31, 0.9);
+    --ani-rss-surface-soft: rgba(29, 30, 31, 0.58);
+    --ani-rss-control: rgba(29, 30, 31, 0.74);
+    --ani-rss-control-hover: rgba(45, 46, 47, 0.88);
+    --ani-rss-border: rgba(255, 255, 255, 0.14);
+    --ani-rss-shadow: 0 12px 36px rgba(0, 0, 0, 0.32);
+    --ani-rss-overlay: linear-gradient(135deg, rgba(0, 0, 0, 0.36), rgba(0, 0, 0, 0.12));
+    --ani-rss-title-color: #f2f3f5;
+    --ani-rss-title-muted-color: rgba(242, 243, 245, 0.7);
+    --ani-rss-title-shadow: 0 1px 2px rgba(0, 0, 0, 0.68), 0 8px 24px rgba(0, 0, 0, 0.26);
+    --ani-rss-header-button-bg: rgba(29, 30, 31, 0.5);
+    --ani-rss-header-button-hover: rgba(45, 46, 47, 0.76);
+    --ani-rss-header-button-border: rgba(255, 255, 255, 0.12);
+    --el-fill-color-light: rgba(45, 46, 47, 0.56) !important;
+    --el-fill-color-lighter: rgba(45, 46, 47, 0.4) !important;
+    --el-border-color: rgba(255, 255, 255, 0.16) !important;
+    --el-border-color-light: rgba(255, 255, 255, 0.12) !important;
+    --el-border-color-extra-light: rgba(255, 255, 255, 0.08) !important;
+}
+
+html,
+body,
+#app,
+.app-shell,
+.app-main,
+.app-page-layout,
+.app-page-content {
+    background: transparent !important;
+}
+
+body {
+    min-height: 100%;
+    isolation: isolate;
+    background-color: var(--ani-rss-bg-color) !important;
+}
+
+body::before,
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+}
+
+body::before {
+    z-index: -2;
+    background-image: var(--ani-rss-bg-desktop), var(--ani-rss-bg-fallback);
+    background-position: center, center;
+    background-size: cover, cover;
+    background-repeat: no-repeat;
+    filter: blur(var(--ani-rss-bg-blur));
+    transform: scale(var(--ani-rss-bg-scale));
+}
+
+body::after {
+    z-index: -1;
+    background: var(--ani-rss-overlay);
+}
+
+@media (orientation: portrait) {
+    body::before {
+        background-image: var(--ani-rss-bg-portrait), var(--ani-rss-bg-fallback);
+    }
+}
+
+.app-nav,
+.el-card,
+.metric-item,
+.dashboard-section,
+.config-tabs .el-tabs__content,
+.segmented-tabs > .el-tabs__header .el-tabs__nav-wrap {
+    border-color: var(--ani-rss-border) !important;
+    background-color: var(--ani-rss-surface) !important;
+    box-shadow: var(--ani-rss-shadow);
+    -webkit-backdrop-filter: blur(var(--ani-rss-glass-blur)) saturate(1.15);
+    backdrop-filter: blur(var(--ani-rss-glass-blur)) saturate(1.15);
+}
+
+.app-nav {
+    border-radius: 0 !important;
+}
+
+.page-header {
+    border: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+}
+
+.page-header-title {
+    color: var(--ani-rss-title-color) !important;
+    text-shadow: var(--ani-rss-title-shadow) !important;
+}
+
+.page-header-subtitle {
+    color: var(--ani-rss-title-muted-color) !important;
+    text-shadow: var(--ani-rss-title-shadow) !important;
+}
+
+.page-header .el-button {
+    box-shadow: none !important;
+}
+
+.page-header .el-button:not(.el-button--primary):not(.el-button--success):not(.el-button--warning):not(.el-button--danger):not(.el-button--info) {
+    background-color: var(--ani-rss-header-button-bg) !important;
+    border-color: var(--ani-rss-header-button-border) !important;
+}
+
+.page-header .el-button:not(.el-button--primary):not(.el-button--success):not(.el-button--warning):not(.el-button--danger):not(.el-button--info):hover {
+    background-color: var(--ani-rss-header-button-hover) !important;
+}
+
+.el-card {
+    --el-card-bg-color: var(--ani-rss-surface);
+}
+
+.el-button {
+    box-shadow: none !important;
+}
+
+.el-button:not(.el-button--primary):not(.el-button--success):not(.el-button--warning):not(.el-button--danger):not(.el-button--info) {
+    --el-button-bg-color: var(--ani-rss-control);
+    --el-button-border-color: var(--ani-rss-border);
+    --el-button-text-color: var(--el-text-color-primary);
+    --el-button-hover-bg-color: var(--ani-rss-control-hover);
+    --el-button-hover-border-color: var(--el-color-primary);
+    --el-button-hover-text-color: var(--el-color-primary);
+    background-color: var(--ani-rss-control) !important;
+    border-color: var(--ani-rss-border) !important;
+    color: var(--el-text-color-primary) !important;
+}
+
+.el-button:not(.el-button--primary):not(.el-button--success):not(.el-button--warning):not(.el-button--danger):not(.el-button--info):hover {
+    background-color: var(--ani-rss-control-hover) !important;
+    border-color: var(--el-color-primary) !important;
+    color: var(--el-color-primary) !important;
+}
+
+.el-button.is-text:not(.is-disabled).is-has-bg,
+.el-input__wrapper,
+.el-select__wrapper,
+.el-textarea__inner,
+.el-input-number > span[role="button"] {
+    background-color: var(--ani-rss-control) !important;
+    -webkit-backdrop-filter: blur(var(--ani-rss-control-blur));
+    backdrop-filter: blur(var(--ani-rss-control-blur));
+}
+
+.el-button.is-text:not(.is-disabled).is-has-bg {
+    color: var(--el-text-color-primary) !important;
+}
+
+.el-button.is-text:not(.is-disabled):not(.is-has-bg) {
+    color: var(--el-text-color-primary) !important;
+}
+
+.el-button.is-text:not(.is-disabled).is-has-bg:hover,
+.el-input__wrapper:hover,
+.el-select__wrapper:hover,
+.el-textarea__inner:hover {
+    background-color: var(--ani-rss-control-hover) !important;
+}
+
+.el-input__wrapper,
+.el-select__wrapper,
+.el-textarea__inner {
+    box-shadow: 0 0 0 1px var(--ani-rss-border) inset !important;
+}
+
+.el-input__wrapper.is-focus,
+.el-select__wrapper.is-focused,
+.el-textarea__inner:focus {
+    box-shadow: 0 0 0 1px var(--el-color-primary) inset !important;
+}
+
+.el-dialog,
+.el-message-box {
+    --el-dialog-bg-color: var(--ani-rss-surface-strong);
+    --el-messagebox-content-color: var(--el-text-color-primary);
+    background-color: var(--ani-rss-surface-strong) !important;
+    -webkit-backdrop-filter: blur(var(--ani-rss-glass-blur)) saturate(1.2);
+    backdrop-filter: blur(var(--ani-rss-glass-blur)) saturate(1.2);
+}
+
+.el-popover.el-popper,
+.el-dropdown__popper,
+.el-select__popper,
+.el-picker__popper {
+    --el-bg-color-overlay: var(--ani-rss-surface-strong);
+    border-color: var(--ani-rss-border) !important;
+    background-color: var(--ani-rss-surface-strong) !important;
+    -webkit-backdrop-filter: blur(var(--ani-rss-glass-blur)) saturate(1.2);
+    backdrop-filter: blur(var(--ani-rss-glass-blur)) saturate(1.2);
+}
+
+.el-table {
+    --el-table-bg-color: transparent;
+    --el-table-tr-bg-color: transparent;
+    --el-table-header-bg-color: var(--ani-rss-surface-soft);
+    --el-table-row-hover-bg-color: var(--ani-rss-control);
+    --el-table-border-color: var(--ani-rss-border);
+    background-color: transparent !important;
+}
+
+.el-table th.el-table__cell,
+.el-table tr,
+.el-table td.el-table__cell {
+    background-color: transparent !important;
+}
+
+.el-table th.el-table__cell {
+    background-color: var(--ani-rss-surface-soft) !important;
+}
+
+@media (max-width: 560px) {
+    .page-header {
+        flex-wrap: wrap;
+    }
+
+    .page-header-actions {
+        width: 100%;
+        margin-left: 0 !important;
+        justify-content: flex-end;
+    }
+}
