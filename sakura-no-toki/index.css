@@ -587,29 +587,55 @@ html.dark .metric-icon.seeding {
     background-color: rgba(231, 165, 184, 0.1) !important;
 }
 
-.el-table__header-wrapper th.el-table-fixed-column--left,
+.el-table:is(.is-scrolling-middle, .is-scrolling-right) {
+    --snt-table-fixed-left-bg: var(--snt-table-fixed-bg);
+    --snt-table-fixed-left-stripe-bg: var(--snt-table-fixed-stripe-bg);
+    --snt-table-fixed-left-header-bg: var(--snt-table-fixed-header-bg);
+    --snt-table-fixed-left-hover-bg: var(--snt-table-fixed-hover-bg);
+}
+
+.el-table:is(.is-scrolling-middle, .is-scrolling-left) {
+    --snt-table-fixed-right-bg: var(--snt-table-fixed-bg);
+    --snt-table-fixed-right-stripe-bg: var(--snt-table-fixed-stripe-bg);
+    --snt-table-fixed-right-header-bg: var(--snt-table-fixed-header-bg);
+    --snt-table-fixed-right-hover-bg: var(--snt-table-fixed-hover-bg);
+}
+
+.el-table__header-wrapper th.el-table-fixed-column--left {
+    background-color: var(--snt-table-fixed-left-header-bg, transparent) !important;
+}
+
 .el-table__header-wrapper th.el-table-fixed-column--right,
 .el-table__header-wrapper .el-table__fixed-right-patch {
-    background-color: var(--snt-table-fixed-header-bg) !important;
+    background-color: var(--snt-table-fixed-right-header-bg, transparent) !important;
 }
 
 .el-table__body-wrapper td.el-table-fixed-column--left,
-.el-table__body-wrapper td.el-table-fixed-column--right,
-.el-table__footer-wrapper td.el-table-fixed-column--left,
-.el-table__footer-wrapper td.el-table-fixed-column--right {
-    background-color: var(--snt-table-fixed-bg) !important;
+.el-table__footer-wrapper td.el-table-fixed-column--left {
+    background-color: var(--snt-table-fixed-left-bg, transparent) !important;
 }
 
-.el-table--striped .el-table__body tr.el-table__row--striped td.el-table-fixed-column--left,
+.el-table__body-wrapper td.el-table-fixed-column--right,
+.el-table__footer-wrapper td.el-table-fixed-column--right {
+    background-color: var(--snt-table-fixed-right-bg, transparent) !important;
+}
+
+.el-table--striped .el-table__body tr.el-table__row--striped td.el-table-fixed-column--left {
+    background-color: var(--snt-table-fixed-left-stripe-bg, transparent) !important;
+}
+
 .el-table--striped .el-table__body tr.el-table__row--striped td.el-table-fixed-column--right {
-    background-color: var(--snt-table-fixed-stripe-bg) !important;
+    background-color: var(--snt-table-fixed-right-stripe-bg, transparent) !important;
 }
 
 .el-table__body tr.hover-row > td.el-table-fixed-column--left,
+.el-table--enable-row-hover .el-table__body tr:hover > td.el-table-fixed-column--left {
+    background-color: var(--snt-table-fixed-left-hover-bg, transparent) !important;
+}
+
 .el-table__body tr.hover-row > td.el-table-fixed-column--right,
-.el-table--enable-row-hover .el-table__body tr:hover > td.el-table-fixed-column--left,
 .el-table--enable-row-hover .el-table__body tr:hover > td.el-table-fixed-column--right {
-    background-color: var(--snt-table-fixed-hover-bg) !important;
+    background-color: var(--snt-table-fixed-right-hover-bg, transparent) !important;
 }
 
 .el-dialog,

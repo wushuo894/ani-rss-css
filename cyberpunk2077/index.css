@@ -464,29 +464,55 @@ h3 {
     background-color: rgba(252, 238, 10, 0.12) !important;
 }
 
-.el-table__header-wrapper th.el-table-fixed-column--left,
+.el-table:is(.is-scrolling-middle, .is-scrolling-right) {
+    --cp-table-fixed-left-bg: var(--cp-table-fixed-bg);
+    --cp-table-fixed-left-stripe-bg: var(--cp-table-fixed-stripe-bg);
+    --cp-table-fixed-left-header-bg: var(--cp-table-fixed-header-bg);
+    --cp-table-fixed-left-hover-bg: var(--cp-table-fixed-hover-bg);
+}
+
+.el-table:is(.is-scrolling-middle, .is-scrolling-left) {
+    --cp-table-fixed-right-bg: var(--cp-table-fixed-bg);
+    --cp-table-fixed-right-stripe-bg: var(--cp-table-fixed-stripe-bg);
+    --cp-table-fixed-right-header-bg: var(--cp-table-fixed-header-bg);
+    --cp-table-fixed-right-hover-bg: var(--cp-table-fixed-hover-bg);
+}
+
+.el-table__header-wrapper th.el-table-fixed-column--left {
+    background-color: var(--cp-table-fixed-left-header-bg, transparent) !important;
+}
+
 .el-table__header-wrapper th.el-table-fixed-column--right,
 .el-table__header-wrapper .el-table__fixed-right-patch {
-    background-color: var(--cp-table-fixed-header-bg) !important;
+    background-color: var(--cp-table-fixed-right-header-bg, transparent) !important;
 }
 
 .el-table__body-wrapper td.el-table-fixed-column--left,
-.el-table__body-wrapper td.el-table-fixed-column--right,
-.el-table__footer-wrapper td.el-table-fixed-column--left,
-.el-table__footer-wrapper td.el-table-fixed-column--right {
-    background-color: var(--cp-table-fixed-bg) !important;
+.el-table__footer-wrapper td.el-table-fixed-column--left {
+    background-color: var(--cp-table-fixed-left-bg, transparent) !important;
 }
 
-.el-table--striped .el-table__body tr.el-table__row--striped td.el-table-fixed-column--left,
+.el-table__body-wrapper td.el-table-fixed-column--right,
+.el-table__footer-wrapper td.el-table-fixed-column--right {
+    background-color: var(--cp-table-fixed-right-bg, transparent) !important;
+}
+
+.el-table--striped .el-table__body tr.el-table__row--striped td.el-table-fixed-column--left {
+    background-color: var(--cp-table-fixed-left-stripe-bg, transparent) !important;
+}
+
 .el-table--striped .el-table__body tr.el-table__row--striped td.el-table-fixed-column--right {
-    background-color: var(--cp-table-fixed-stripe-bg) !important;
+    background-color: var(--cp-table-fixed-right-stripe-bg, transparent) !important;
 }
 
 .el-table__body tr.hover-row > td.el-table-fixed-column--left,
+.el-table--enable-row-hover .el-table__body tr:hover > td.el-table-fixed-column--left {
+    background-color: var(--cp-table-fixed-left-hover-bg, transparent) !important;
+}
+
 .el-table__body tr.hover-row > td.el-table-fixed-column--right,
-.el-table--enable-row-hover .el-table__body tr:hover > td.el-table-fixed-column--left,
 .el-table--enable-row-hover .el-table__body tr:hover > td.el-table-fixed-column--right {
-    background-color: var(--cp-table-fixed-hover-bg) !important;
+    background-color: var(--cp-table-fixed-right-hover-bg, transparent) !important;
 }
 
 .el-dialog,
