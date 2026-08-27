@@ -18,8 +18,6 @@
     --mygo-primary-hover: #4aa0cc;
     --mygo-bg-blur: 0px;
     --mygo-bg-scale: 1.05;
-    --mygo-glass-blur: 16px;
-    --mygo-control-blur: 10px;
 }
 
 html {
@@ -31,6 +29,10 @@ html {
     --ani-rss-surface-soft: rgba(247, 252, 255, 0.58);
     --ani-rss-control: rgba(247, 252, 255, 0.76);
     --ani-rss-control-hover: rgba(247, 252, 255, 0.9);
+    --ani-rss-table-fixed-bg: #f7fcff;
+    --ani-rss-table-fixed-stripe-bg: #eff8fc;
+    --ani-rss-table-fixed-header-bg: #e9f4f9;
+    --ani-rss-table-fixed-hover-bg: #e3f1f7;
     --ani-rss-border: rgba(51, 136, 187, 0.18);
     --ani-rss-shadow: 0 16px 42px rgba(21, 70, 98, 0.14);
     --ani-rss-overlay: linear-gradient(135deg, rgba(14, 56, 82, 0.18), rgba(229, 246, 252, 0.12));
@@ -66,6 +68,10 @@ html.dark {
     --ani-rss-surface-soft: rgba(12, 28, 40, 0.62);
     --ani-rss-control: rgba(18, 43, 60, 0.78);
     --ani-rss-control-hover: rgba(24, 57, 78, 0.9);
+    --ani-rss-table-fixed-bg: #0c1c28;
+    --ani-rss-table-fixed-stripe-bg: #102536;
+    --ani-rss-table-fixed-header-bg: #132d40;
+    --ani-rss-table-fixed-hover-bg: #18394e;
     --ani-rss-border: rgba(133, 196, 224, 0.2);
     --ani-rss-shadow: 0 16px 42px rgba(0, 0, 0, 0.36);
     --ani-rss-overlay: linear-gradient(135deg, rgba(0, 0, 0, 0.36), rgba(20, 72, 100, 0.2));
@@ -176,8 +182,6 @@ h2 {
     border-color: var(--ani-rss-border) !important;
     background-color: var(--ani-rss-surface) !important;
     box-shadow: var(--ani-rss-shadow);
-    -webkit-backdrop-filter: blur(var(--mygo-glass-blur)) saturate(1.18);
-    backdrop-filter: blur(var(--mygo-glass-blur)) saturate(1.18);
 }
 
 .app-nav {
@@ -188,8 +192,6 @@ h2 {
     border: 0 !important;
     background: transparent !important;
     box-shadow: none !important;
-    -webkit-backdrop-filter: none !important;
-    backdrop-filter: none !important;
 }
 
 .page-header-title {
@@ -247,8 +249,6 @@ h2 {
 .el-input-number > span[role="button"],
 .el-button.is-text:not(.is-disabled).is-has-bg {
     background-color: var(--ani-rss-control) !important;
-    -webkit-backdrop-filter: blur(var(--mygo-control-blur));
-    backdrop-filter: blur(var(--mygo-control-blur));
 }
 
 .el-button.is-text:not(.is-disabled).is-has-bg {
@@ -299,8 +299,6 @@ h2 {
 .el-message-box {
     --el-dialog-bg-color: var(--ani-rss-surface-strong);
     background-color: var(--ani-rss-surface-strong) !important;
-    -webkit-backdrop-filter: blur(var(--mygo-glass-blur)) saturate(1.22);
-    backdrop-filter: blur(var(--mygo-glass-blur)) saturate(1.22);
 }
 
 .el-dialog__header {
@@ -329,14 +327,12 @@ h2 {
     --el-bg-color-overlay: var(--ani-rss-surface-strong);
     border-color: var(--ani-rss-border) !important;
     background-color: var(--ani-rss-surface-strong) !important;
-    -webkit-backdrop-filter: blur(var(--mygo-glass-blur)) saturate(1.22);
-    backdrop-filter: blur(var(--mygo-glass-blur)) saturate(1.22);
 }
 
 .el-table {
     --el-table-bg-color: transparent;
     --el-table-tr-bg-color: transparent;
-    --el-table-header-bg-color: var(--ani-rss-surface-soft);
+    --el-table-header-bg-color: transparent;
     --el-table-row-hover-bg-color: var(--ani-rss-control);
     --el-table-border-color: var(--ani-rss-border);
     background-color: transparent !important;
@@ -349,7 +345,58 @@ h2 {
 }
 
 .el-table th.el-table__cell {
-    background-color: var(--ani-rss-surface-soft) !important;
+    background-color: transparent !important;
+}
+
+.el-table:is(.is-scrolling-middle, .is-scrolling-right) {
+    --ani-rss-table-fixed-left-bg: var(--ani-rss-table-fixed-bg);
+    --ani-rss-table-fixed-left-stripe-bg: var(--ani-rss-table-fixed-stripe-bg);
+    --ani-rss-table-fixed-left-header-bg: var(--ani-rss-table-fixed-header-bg);
+    --ani-rss-table-fixed-left-hover-bg: var(--ani-rss-table-fixed-hover-bg);
+}
+
+.el-table:is(.is-scrolling-middle, .is-scrolling-left) {
+    --ani-rss-table-fixed-right-bg: var(--ani-rss-table-fixed-bg);
+    --ani-rss-table-fixed-right-stripe-bg: var(--ani-rss-table-fixed-stripe-bg);
+    --ani-rss-table-fixed-right-header-bg: var(--ani-rss-table-fixed-header-bg);
+    --ani-rss-table-fixed-right-hover-bg: var(--ani-rss-table-fixed-hover-bg);
+}
+
+.el-table__header-wrapper th.el-table-fixed-column--left {
+    background-color: var(--ani-rss-table-fixed-left-header-bg, transparent) !important;
+}
+
+.el-table__header-wrapper th.el-table-fixed-column--right,
+.el-table__header-wrapper .el-table__fixed-right-patch {
+    background-color: var(--ani-rss-table-fixed-right-header-bg, transparent) !important;
+}
+
+.el-table__body-wrapper td.el-table-fixed-column--left,
+.el-table__footer-wrapper td.el-table-fixed-column--left {
+    background-color: var(--ani-rss-table-fixed-left-bg, transparent) !important;
+}
+
+.el-table__body-wrapper td.el-table-fixed-column--right,
+.el-table__footer-wrapper td.el-table-fixed-column--right {
+    background-color: var(--ani-rss-table-fixed-right-bg, transparent) !important;
+}
+
+.el-table--striped .el-table__body tr.el-table__row--striped td.el-table-fixed-column--left {
+    background-color: var(--ani-rss-table-fixed-left-stripe-bg, transparent) !important;
+}
+
+.el-table--striped .el-table__body tr.el-table__row--striped td.el-table-fixed-column--right {
+    background-color: var(--ani-rss-table-fixed-right-stripe-bg, transparent) !important;
+}
+
+.el-table__body tr.hover-row > td.el-table-fixed-column--left,
+.el-table--enable-row-hover .el-table__body tr:hover > td.el-table-fixed-column--left {
+    background-color: var(--ani-rss-table-fixed-left-hover-bg, transparent) !important;
+}
+
+.el-table__body tr.hover-row > td.el-table-fixed-column--right,
+.el-table--enable-row-hover .el-table__body tr:hover > td.el-table-fixed-column--right {
+    background-color: var(--ani-rss-table-fixed-right-hover-bg, transparent) !important;
 }
 
 @media (max-width: 450px) {

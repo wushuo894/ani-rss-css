@@ -9,6 +9,10 @@
     --cp-panel-soft: rgba(14, 18, 32, 0.66);
     --cp-control: rgba(12, 17, 28, 0.76);
     --cp-control-hover: rgba(31, 36, 47, 0.88);
+    --cp-table-fixed-bg: #0a0d18;
+    --cp-table-fixed-stripe-bg: #16150f;
+    --cp-table-fixed-header-bg: #282914;
+    --cp-table-fixed-hover-bg: #09262e;
     --cp-yellow: #fcee0a;
     --cp-yellow-soft: rgba(252, 238, 10, 0.16);
     --cp-cyan: #00f0ff;
@@ -23,8 +27,6 @@
     --cp-border: rgba(0, 240, 255, 0.28);
     --cp-border-strong: rgba(252, 238, 10, 0.7);
     --cp-shadow: 0 18px 48px rgba(0, 0, 0, 0.42);
-    --cp-glass-blur: 16px;
-    --cp-control-blur: 10px;
     --cp-bg-art: image-set(
             url("./assets/background.avif") type("image/avif"),
             url("./assets/background.webp") type("image/webp"),
@@ -130,8 +132,6 @@ body::after {
     border-radius: 0 !important;
     background-color: var(--cp-panel) !important;
     box-shadow: var(--cp-shadow);
-    -webkit-backdrop-filter: blur(var(--cp-glass-blur)) saturate(1.28);
-    backdrop-filter: blur(var(--cp-glass-blur)) saturate(1.28);
 }
 
 .app-nav {
@@ -222,8 +222,6 @@ body::after {
     border: 0 !important;
     background: transparent !important;
     box-shadow: none !important;
-    -webkit-backdrop-filter: none !important;
-    backdrop-filter: none !important;
 }
 
 .page-header-title,
@@ -316,8 +314,6 @@ h3 {
 .el-textarea__inner,
 .el-input-number > span[role="button"] {
     background-color: var(--cp-control) !important;
-    -webkit-backdrop-filter: blur(var(--cp-control-blur));
-    backdrop-filter: blur(var(--cp-control-blur));
 }
 
 .el-input__wrapper,
@@ -450,7 +446,7 @@ h3 {
 .el-table {
     --el-table-bg-color: transparent;
     --el-table-tr-bg-color: transparent;
-    --el-table-header-bg-color: rgba(252, 238, 10, 0.12);
+    --el-table-header-bg-color: transparent;
     --el-table-row-hover-bg-color: rgba(0, 240, 255, 0.1);
     --el-table-border-color: rgba(0, 240, 255, 0.2);
     color: var(--cp-text);
@@ -465,7 +461,58 @@ h3 {
 
 .el-table th.el-table__cell {
     color: var(--cp-yellow) !important;
-    background-color: rgba(252, 238, 10, 0.12) !important;
+    background-color: transparent !important;
+}
+
+.el-table:is(.is-scrolling-middle, .is-scrolling-right) {
+    --cp-table-fixed-left-bg: var(--cp-table-fixed-bg);
+    --cp-table-fixed-left-stripe-bg: var(--cp-table-fixed-stripe-bg);
+    --cp-table-fixed-left-header-bg: var(--cp-table-fixed-header-bg);
+    --cp-table-fixed-left-hover-bg: var(--cp-table-fixed-hover-bg);
+}
+
+.el-table:is(.is-scrolling-middle, .is-scrolling-left) {
+    --cp-table-fixed-right-bg: var(--cp-table-fixed-bg);
+    --cp-table-fixed-right-stripe-bg: var(--cp-table-fixed-stripe-bg);
+    --cp-table-fixed-right-header-bg: var(--cp-table-fixed-header-bg);
+    --cp-table-fixed-right-hover-bg: var(--cp-table-fixed-hover-bg);
+}
+
+.el-table__header-wrapper th.el-table-fixed-column--left {
+    background-color: var(--cp-table-fixed-left-header-bg, transparent) !important;
+}
+
+.el-table__header-wrapper th.el-table-fixed-column--right,
+.el-table__header-wrapper .el-table__fixed-right-patch {
+    background-color: var(--cp-table-fixed-right-header-bg, transparent) !important;
+}
+
+.el-table__body-wrapper td.el-table-fixed-column--left,
+.el-table__footer-wrapper td.el-table-fixed-column--left {
+    background-color: var(--cp-table-fixed-left-bg, transparent) !important;
+}
+
+.el-table__body-wrapper td.el-table-fixed-column--right,
+.el-table__footer-wrapper td.el-table-fixed-column--right {
+    background-color: var(--cp-table-fixed-right-bg, transparent) !important;
+}
+
+.el-table--striped .el-table__body tr.el-table__row--striped td.el-table-fixed-column--left {
+    background-color: var(--cp-table-fixed-left-stripe-bg, transparent) !important;
+}
+
+.el-table--striped .el-table__body tr.el-table__row--striped td.el-table-fixed-column--right {
+    background-color: var(--cp-table-fixed-right-stripe-bg, transparent) !important;
+}
+
+.el-table__body tr.hover-row > td.el-table-fixed-column--left,
+.el-table--enable-row-hover .el-table__body tr:hover > td.el-table-fixed-column--left {
+    background-color: var(--cp-table-fixed-left-hover-bg, transparent) !important;
+}
+
+.el-table__body tr.hover-row > td.el-table-fixed-column--right,
+.el-table--enable-row-hover .el-table__body tr:hover > td.el-table-fixed-column--right {
+    background-color: var(--cp-table-fixed-right-hover-bg, transparent) !important;
 }
 
 .el-dialog,
@@ -478,8 +525,6 @@ h3 {
     border-radius: 0 !important;
     background-color: var(--cp-panel-strong) !important;
     box-shadow: var(--cp-shadow) !important;
-    -webkit-backdrop-filter: blur(var(--cp-glass-blur)) saturate(1.32);
-    backdrop-filter: blur(var(--cp-glass-blur)) saturate(1.32);
 }
 
 .el-dialog {
@@ -539,8 +584,6 @@ h3 {
     border: 1px solid var(--cp-border);
     background-color: var(--cp-panel);
     box-shadow: var(--cp-shadow);
-    -webkit-backdrop-filter: blur(var(--cp-glass-blur)) saturate(1.28);
-    backdrop-filter: blur(var(--cp-glass-blur)) saturate(1.28);
 }
 
 #login-page .footer,

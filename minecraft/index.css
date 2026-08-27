@@ -17,6 +17,10 @@
     --mc-ui-strong: rgba(246, 246, 246, 0.94);
     --mc-ui-soft: rgba(255, 255, 255, 0.66);
     --mc-ui-hover: rgba(255, 255, 255, 0.94);
+    --mc-table-fixed-bg: #f6f6f6;
+    --mc-table-fixed-stripe-bg: #e8e8e8;
+    --mc-table-fixed-header-bg: #d6d6d6;
+    --mc-table-fixed-hover-bg: #e5f1df;
     --mc-border: #3b3b3b;
     --mc-border-light: rgba(255, 255, 255, 0.72);
     --mc-text: #1d1d1d;
@@ -47,6 +51,10 @@ html.dark {
     --mc-ui-strong: rgba(29, 29, 29, 0.94);
     --mc-ui-soft: rgba(64, 64, 64, 0.62);
     --mc-ui-hover: rgba(52, 52, 52, 0.96);
+    --mc-table-fixed-bg: #1d1d1d;
+    --mc-table-fixed-stripe-bg: #292929;
+    --mc-table-fixed-header-bg: #3a3a3a;
+    --mc-table-fixed-hover-bg: #294029;
     --mc-border: #0a0a0a;
     --mc-border-light: rgba(255, 255, 255, 0.18);
     --mc-text: #f4f4f4;
@@ -399,7 +407,7 @@ h3 {
 .el-table {
     --el-table-bg-color: transparent;
     --el-table-tr-bg-color: transparent;
-    --el-table-header-bg-color: rgba(126, 126, 126, 0.42);
+    --el-table-header-bg-color: transparent;
     --el-table-row-hover-bg-color: rgba(85, 166, 48, 0.22);
     --el-table-border-color: rgba(59, 59, 59, 0.42);
     background-color: transparent !important;
@@ -412,7 +420,58 @@ h3 {
 }
 
 .el-table th.el-table__cell {
-    background-color: rgba(126, 126, 126, 0.42) !important;
+    background-color: transparent !important;
+}
+
+.el-table:is(.is-scrolling-middle, .is-scrolling-right) {
+    --mc-table-fixed-left-bg: var(--mc-table-fixed-bg);
+    --mc-table-fixed-left-stripe-bg: var(--mc-table-fixed-stripe-bg);
+    --mc-table-fixed-left-header-bg: var(--mc-table-fixed-header-bg);
+    --mc-table-fixed-left-hover-bg: var(--mc-table-fixed-hover-bg);
+}
+
+.el-table:is(.is-scrolling-middle, .is-scrolling-left) {
+    --mc-table-fixed-right-bg: var(--mc-table-fixed-bg);
+    --mc-table-fixed-right-stripe-bg: var(--mc-table-fixed-stripe-bg);
+    --mc-table-fixed-right-header-bg: var(--mc-table-fixed-header-bg);
+    --mc-table-fixed-right-hover-bg: var(--mc-table-fixed-hover-bg);
+}
+
+.el-table__header-wrapper th.el-table-fixed-column--left {
+    background-color: var(--mc-table-fixed-left-header-bg, transparent) !important;
+}
+
+.el-table__header-wrapper th.el-table-fixed-column--right,
+.el-table__header-wrapper .el-table__fixed-right-patch {
+    background-color: var(--mc-table-fixed-right-header-bg, transparent) !important;
+}
+
+.el-table__body-wrapper td.el-table-fixed-column--left,
+.el-table__footer-wrapper td.el-table-fixed-column--left {
+    background-color: var(--mc-table-fixed-left-bg, transparent) !important;
+}
+
+.el-table__body-wrapper td.el-table-fixed-column--right,
+.el-table__footer-wrapper td.el-table-fixed-column--right {
+    background-color: var(--mc-table-fixed-right-bg, transparent) !important;
+}
+
+.el-table--striped .el-table__body tr.el-table__row--striped td.el-table-fixed-column--left {
+    background-color: var(--mc-table-fixed-left-stripe-bg, transparent) !important;
+}
+
+.el-table--striped .el-table__body tr.el-table__row--striped td.el-table-fixed-column--right {
+    background-color: var(--mc-table-fixed-right-stripe-bg, transparent) !important;
+}
+
+.el-table__body tr.hover-row > td.el-table-fixed-column--left,
+.el-table--enable-row-hover .el-table__body tr:hover > td.el-table-fixed-column--left {
+    background-color: var(--mc-table-fixed-left-hover-bg, transparent) !important;
+}
+
+.el-table__body tr.hover-row > td.el-table-fixed-column--right,
+.el-table--enable-row-hover .el-table__body tr:hover > td.el-table-fixed-column--right {
+    background-color: var(--mc-table-fixed-right-hover-bg, transparent) !important;
 }
 
 .el-dialog,

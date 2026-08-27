@@ -6,8 +6,6 @@
     --ani-rss-bg-portrait: url(https://api.imlazy.ink/img-phone);
     --ani-rss-bg-blur: 2px;
     --ani-rss-bg-scale: 1.06;
-    --ani-rss-glass-blur: 14px;
-    --ani-rss-control-blur: 9px;
 }
 
 html {
@@ -19,6 +17,10 @@ html {
     --ani-rss-surface-soft: rgba(255, 255, 255, 0.58);
     --ani-rss-control: rgba(255, 255, 255, 0.74);
     --ani-rss-control-hover: rgba(255, 255, 255, 0.88);
+    --ani-rss-table-fixed-bg: #ffffff;
+    --ani-rss-table-fixed-stripe-bg: #f7f8fa;
+    --ani-rss-table-fixed-header-bg: #eef1f4;
+    --ani-rss-table-fixed-hover-bg: #f1f4f7;
     --ani-rss-border: rgba(255, 255, 255, 0.42);
     --ani-rss-shadow: 0 12px 36px rgba(31, 45, 61, 0.12);
     --ani-rss-overlay: linear-gradient(135deg, rgba(245, 247, 250, 0.28), rgba(245, 247, 250, 0.1));
@@ -47,6 +49,10 @@ html.dark {
     --ani-rss-surface-soft: rgba(29, 30, 31, 0.58);
     --ani-rss-control: rgba(29, 30, 31, 0.74);
     --ani-rss-control-hover: rgba(45, 46, 47, 0.88);
+    --ani-rss-table-fixed-bg: #1d1e1f;
+    --ani-rss-table-fixed-stripe-bg: #252627;
+    --ani-rss-table-fixed-header-bg: #292a2b;
+    --ani-rss-table-fixed-hover-bg: #2d2e2f;
     --ani-rss-border: rgba(255, 255, 255, 0.14);
     --ani-rss-shadow: 0 12px 36px rgba(0, 0, 0, 0.32);
     --ani-rss-overlay: linear-gradient(135deg, rgba(0, 0, 0, 0.36), rgba(0, 0, 0, 0.12));
@@ -117,8 +123,6 @@ body::after {
     border-color: var(--ani-rss-border) !important;
     background-color: var(--ani-rss-surface) !important;
     box-shadow: var(--ani-rss-shadow);
-    -webkit-backdrop-filter: blur(var(--ani-rss-glass-blur)) saturate(1.15);
-    backdrop-filter: blur(var(--ani-rss-glass-blur)) saturate(1.15);
 }
 
 .app-nav {
@@ -129,8 +133,6 @@ body::after {
     border: 0 !important;
     background: transparent !important;
     box-shadow: none !important;
-    -webkit-backdrop-filter: none !important;
-    backdrop-filter: none !important;
 }
 
 .page-header-title {
@@ -188,8 +190,6 @@ body::after {
 .el-textarea__inner,
 .el-input-number > span[role="button"] {
     background-color: var(--ani-rss-control) !important;
-    -webkit-backdrop-filter: blur(var(--ani-rss-control-blur));
-    backdrop-filter: blur(var(--ani-rss-control-blur));
 }
 
 .el-button.is-text:not(.is-disabled).is-has-bg {
@@ -224,8 +224,6 @@ body::after {
     --el-dialog-bg-color: var(--ani-rss-surface-strong);
     --el-messagebox-content-color: var(--el-text-color-primary);
     background-color: var(--ani-rss-surface-strong) !important;
-    -webkit-backdrop-filter: blur(var(--ani-rss-glass-blur)) saturate(1.2);
-    backdrop-filter: blur(var(--ani-rss-glass-blur)) saturate(1.2);
 }
 
 .el-popover.el-popper,
@@ -235,14 +233,12 @@ body::after {
     --el-bg-color-overlay: var(--ani-rss-surface-strong);
     border-color: var(--ani-rss-border) !important;
     background-color: var(--ani-rss-surface-strong) !important;
-    -webkit-backdrop-filter: blur(var(--ani-rss-glass-blur)) saturate(1.2);
-    backdrop-filter: blur(var(--ani-rss-glass-blur)) saturate(1.2);
 }
 
 .el-table {
     --el-table-bg-color: transparent;
     --el-table-tr-bg-color: transparent;
-    --el-table-header-bg-color: var(--ani-rss-surface-soft);
+    --el-table-header-bg-color: transparent;
     --el-table-row-hover-bg-color: var(--ani-rss-control);
     --el-table-border-color: var(--ani-rss-border);
     background-color: transparent !important;
@@ -255,7 +251,58 @@ body::after {
 }
 
 .el-table th.el-table__cell {
-    background-color: var(--ani-rss-surface-soft) !important;
+    background-color: transparent !important;
+}
+
+.el-table:is(.is-scrolling-middle, .is-scrolling-right) {
+    --ani-rss-table-fixed-left-bg: var(--ani-rss-table-fixed-bg);
+    --ani-rss-table-fixed-left-stripe-bg: var(--ani-rss-table-fixed-stripe-bg);
+    --ani-rss-table-fixed-left-header-bg: var(--ani-rss-table-fixed-header-bg);
+    --ani-rss-table-fixed-left-hover-bg: var(--ani-rss-table-fixed-hover-bg);
+}
+
+.el-table:is(.is-scrolling-middle, .is-scrolling-left) {
+    --ani-rss-table-fixed-right-bg: var(--ani-rss-table-fixed-bg);
+    --ani-rss-table-fixed-right-stripe-bg: var(--ani-rss-table-fixed-stripe-bg);
+    --ani-rss-table-fixed-right-header-bg: var(--ani-rss-table-fixed-header-bg);
+    --ani-rss-table-fixed-right-hover-bg: var(--ani-rss-table-fixed-hover-bg);
+}
+
+.el-table__header-wrapper th.el-table-fixed-column--left {
+    background-color: var(--ani-rss-table-fixed-left-header-bg, transparent) !important;
+}
+
+.el-table__header-wrapper th.el-table-fixed-column--right,
+.el-table__header-wrapper .el-table__fixed-right-patch {
+    background-color: var(--ani-rss-table-fixed-right-header-bg, transparent) !important;
+}
+
+.el-table__body-wrapper td.el-table-fixed-column--left,
+.el-table__footer-wrapper td.el-table-fixed-column--left {
+    background-color: var(--ani-rss-table-fixed-left-bg, transparent) !important;
+}
+
+.el-table__body-wrapper td.el-table-fixed-column--right,
+.el-table__footer-wrapper td.el-table-fixed-column--right {
+    background-color: var(--ani-rss-table-fixed-right-bg, transparent) !important;
+}
+
+.el-table--striped .el-table__body tr.el-table__row--striped td.el-table-fixed-column--left {
+    background-color: var(--ani-rss-table-fixed-left-stripe-bg, transparent) !important;
+}
+
+.el-table--striped .el-table__body tr.el-table__row--striped td.el-table-fixed-column--right {
+    background-color: var(--ani-rss-table-fixed-right-stripe-bg, transparent) !important;
+}
+
+.el-table__body tr.hover-row > td.el-table-fixed-column--left,
+.el-table--enable-row-hover .el-table__body tr:hover > td.el-table-fixed-column--left {
+    background-color: var(--ani-rss-table-fixed-left-hover-bg, transparent) !important;
+}
+
+.el-table__body tr.hover-row > td.el-table-fixed-column--right,
+.el-table--enable-row-hover .el-table__body tr:hover > td.el-table-fixed-column--right {
+    background-color: var(--ani-rss-table-fixed-right-hover-bg, transparent) !important;
 }
 
 @media (max-width: 560px) {
