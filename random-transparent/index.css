@@ -6,8 +6,6 @@
     --ani-rss-bg-portrait: url(https://api.imlazy.ink/img-phone);
     --ani-rss-bg-blur: 2px;
     --ani-rss-bg-scale: 1.06;
-    --ani-rss-glass-blur: 14px;
-    --ani-rss-control-blur: 9px;
 }
 
 html {
@@ -117,8 +115,6 @@ body::after {
     border-color: var(--ani-rss-border) !important;
     background-color: var(--ani-rss-surface) !important;
     box-shadow: var(--ani-rss-shadow);
-    -webkit-backdrop-filter: blur(var(--ani-rss-glass-blur)) saturate(1.15);
-    backdrop-filter: blur(var(--ani-rss-glass-blur)) saturate(1.15);
 }
 
 .app-nav {
@@ -129,8 +125,6 @@ body::after {
     border: 0 !important;
     background: transparent !important;
     box-shadow: none !important;
-    -webkit-backdrop-filter: none !important;
-    backdrop-filter: none !important;
 }
 
 .page-header-title {
@@ -188,8 +182,6 @@ body::after {
 .el-textarea__inner,
 .el-input-number > span[role="button"] {
     background-color: var(--ani-rss-control) !important;
-    -webkit-backdrop-filter: blur(var(--ani-rss-control-blur));
-    backdrop-filter: blur(var(--ani-rss-control-blur));
 }
 
 .el-button.is-text:not(.is-disabled).is-has-bg {
@@ -224,8 +216,6 @@ body::after {
     --el-dialog-bg-color: var(--ani-rss-surface-strong);
     --el-messagebox-content-color: var(--el-text-color-primary);
     background-color: var(--ani-rss-surface-strong) !important;
-    -webkit-backdrop-filter: blur(var(--ani-rss-glass-blur)) saturate(1.2);
-    backdrop-filter: blur(var(--ani-rss-glass-blur)) saturate(1.2);
 }
 
 .el-popover.el-popper,
@@ -235,8 +225,6 @@ body::after {
     --el-bg-color-overlay: var(--ani-rss-surface-strong);
     border-color: var(--ani-rss-border) !important;
     background-color: var(--ani-rss-surface-strong) !important;
-    -webkit-backdrop-filter: blur(var(--ani-rss-glass-blur)) saturate(1.2);
-    backdrop-filter: blur(var(--ani-rss-glass-blur)) saturate(1.2);
 }
 
 .el-table {

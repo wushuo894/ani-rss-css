@@ -23,8 +23,6 @@
     --cp-border: rgba(0, 240, 255, 0.28);
     --cp-border-strong: rgba(252, 238, 10, 0.7);
     --cp-shadow: 0 18px 48px rgba(0, 0, 0, 0.42);
-    --cp-glass-blur: 16px;
-    --cp-control-blur: 10px;
     --cp-bg-art: image-set(
             url("./assets/background.avif") type("image/avif"),
             url("./assets/background.webp") type("image/webp"),
@@ -130,8 +128,6 @@ body::after {
     border-radius: 0 !important;
     background-color: var(--cp-panel) !important;
     box-shadow: var(--cp-shadow);
-    -webkit-backdrop-filter: blur(var(--cp-glass-blur)) saturate(1.28);
-    backdrop-filter: blur(var(--cp-glass-blur)) saturate(1.28);
 }
 
 .app-nav {
@@ -222,8 +218,6 @@ body::after {
     border: 0 !important;
     background: transparent !important;
     box-shadow: none !important;
-    -webkit-backdrop-filter: none !important;
-    backdrop-filter: none !important;
 }
 
 .page-header-title,
@@ -316,8 +310,6 @@ h3 {
 .el-textarea__inner,
 .el-input-number > span[role="button"] {
     background-color: var(--cp-control) !important;
-    -webkit-backdrop-filter: blur(var(--cp-control-blur));
-    backdrop-filter: blur(var(--cp-control-blur));
 }
 
 .el-input__wrapper,
@@ -478,8 +470,6 @@ h3 {
     border-radius: 0 !important;
     background-color: var(--cp-panel-strong) !important;
     box-shadow: var(--cp-shadow) !important;
-    -webkit-backdrop-filter: blur(var(--cp-glass-blur)) saturate(1.32);
-    backdrop-filter: blur(var(--cp-glass-blur)) saturate(1.32);
 }
 
 .el-dialog {
@@ -539,8 +529,6 @@ h3 {
     border: 1px solid var(--cp-border);
     background-color: var(--cp-panel);
     box-shadow: var(--cp-shadow);
-    -webkit-backdrop-filter: blur(var(--cp-glass-blur)) saturate(1.28);
-    backdrop-filter: blur(var(--cp-glass-blur)) saturate(1.28);
 }
 
 #login-page .footer,

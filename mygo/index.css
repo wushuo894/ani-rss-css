@@ -18,8 +18,6 @@
     --mygo-primary-hover: #4aa0cc;
     --mygo-bg-blur: 0px;
     --mygo-bg-scale: 1.05;
-    --mygo-glass-blur: 16px;
-    --mygo-control-blur: 10px;
 }
 
 html {
@@ -176,8 +174,6 @@ h2 {
     border-color: var(--ani-rss-border) !important;
     background-color: var(--ani-rss-surface) !important;
     box-shadow: var(--ani-rss-shadow);
-    -webkit-backdrop-filter: blur(var(--mygo-glass-blur)) saturate(1.18);
-    backdrop-filter: blur(var(--mygo-glass-blur)) saturate(1.18);
 }
 
 .app-nav {
@@ -188,8 +184,6 @@ h2 {
     border: 0 !important;
     background: transparent !important;
     box-shadow: none !important;
-    -webkit-backdrop-filter: none !important;
-    backdrop-filter: none !important;
 }
 
 .page-header-title {
@@ -247,8 +241,6 @@ h2 {
 .el-input-number > span[role="button"],
 .el-button.is-text:not(.is-disabled).is-has-bg {
     background-color: var(--ani-rss-control) !important;
-    -webkit-backdrop-filter: blur(var(--mygo-control-blur));
-    backdrop-filter: blur(var(--mygo-control-blur));
 }
 
 .el-button.is-text:not(.is-disabled).is-has-bg {
@@ -299,8 +291,6 @@ h2 {
 .el-message-box {
     --el-dialog-bg-color: var(--ani-rss-surface-strong);
     background-color: var(--ani-rss-surface-strong) !important;
-    -webkit-backdrop-filter: blur(var(--mygo-glass-blur)) saturate(1.22);
-    backdrop-filter: blur(var(--mygo-glass-blur)) saturate(1.22);
 }
 
 .el-dialog__header {
@@ -329,8 +319,6 @@ h2 {
     --el-bg-color-overlay: var(--ani-rss-surface-strong);
     border-color: var(--ani-rss-border) !important;
     background-color: var(--ani-rss-surface-strong) !important;
-    -webkit-backdrop-filter: blur(var(--mygo-glass-blur)) saturate(1.22);
-    backdrop-filter: blur(var(--mygo-glass-blur)) saturate(1.22);
 }
 
 .el-table {

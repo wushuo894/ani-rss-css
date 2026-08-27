@@ -35,8 +35,6 @@
     --btr-border: rgba(196, 95, 135, 0.2);
     --btr-border-strong: rgba(220, 95, 145, 0.5);
     --btr-shadow: 0 16px 42px rgba(126, 66, 92, 0.16);
-    --btr-glass-blur: 16px;
-    --btr-control-blur: 9px;
     --btr-title-shadow: 0 1px 2px rgba(255, 255, 255, 0.76), 0 10px 28px rgba(136, 68, 100, 0.14);
 }
 
@@ -170,8 +168,6 @@ body:has(#login-page)::before {
     border-radius: 8px !important;
     background-color: var(--btr-surface) !important;
     box-shadow: var(--btr-shadow);
-    -webkit-backdrop-filter: blur(var(--btr-glass-blur)) saturate(1.16);
-    backdrop-filter: blur(var(--btr-glass-blur)) saturate(1.16);
 }
 
 .app-nav {
@@ -257,8 +253,6 @@ body:has(#login-page)::before {
     border: 0 !important;
     background: transparent !important;
     box-shadow: none !important;
-    -webkit-backdrop-filter: none !important;
-    backdrop-filter: none !important;
 }
 
 .page-header-title,
@@ -362,8 +356,6 @@ h3 {
 .el-textarea__inner,
 .el-input-number > span[role="button"] {
     background-color: var(--btr-control) !important;
-    -webkit-backdrop-filter: blur(var(--btr-control-blur));
-    backdrop-filter: blur(var(--btr-control-blur));
 }
 
 .el-button.is-text:not(.is-disabled).is-has-bg,
@@ -567,8 +559,6 @@ html.dark .metric-icon.seeding {
     border-radius: 8px !important;
     background-color: var(--btr-surface-strong) !important;
     box-shadow: var(--btr-shadow) !important;
-    -webkit-backdrop-filter: blur(var(--btr-glass-blur)) saturate(1.18);
-    backdrop-filter: blur(var(--btr-glass-blur)) saturate(1.18);
 }
 
 .el-dialog {
@@ -631,8 +621,6 @@ html.dark .metric-icon.seeding {
     border-radius: 8px;
     background-color: var(--btr-surface);
     box-shadow: var(--btr-shadow);
-    -webkit-backdrop-filter: blur(var(--btr-glass-blur)) saturate(1.16);
-    backdrop-filter: blur(var(--btr-glass-blur)) saturate(1.16);
 }
 
 #login-page .footer,
