@@ -446,7 +446,7 @@ h3 {
 .el-table {
     --el-table-bg-color: transparent;
     --el-table-tr-bg-color: transparent;
-    --el-table-header-bg-color: rgba(252, 238, 10, 0.12);
+    --el-table-header-bg-color: transparent;
     --el-table-row-hover-bg-color: rgba(0, 240, 255, 0.1);
     --el-table-border-color: rgba(0, 240, 255, 0.2);
     color: var(--cp-text);
@@ -461,7 +461,7 @@ h3 {
 
 .el-table th.el-table__cell {
     color: var(--cp-yellow) !important;
-    background-color: rgba(252, 238, 10, 0.12) !important;
+    background-color: transparent !important;
 }
 
 .el-table:is(.is-scrolling-middle, .is-scrolling-right) {

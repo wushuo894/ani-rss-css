@@ -539,7 +539,7 @@ html.dark .metric-icon.seeding {
 .el-table {
     --el-table-bg-color: transparent;
     --el-table-tr-bg-color: transparent;
-    --el-table-header-bg-color: rgba(240, 125, 167, 0.1);
+    --el-table-header-bg-color: transparent;
     --el-table-row-hover-bg-color: rgba(246, 212, 95, 0.12);
     --el-table-border-color: rgba(220, 95, 145, 0.14);
     color: var(--btr-ink);
@@ -554,7 +554,7 @@ html.dark .metric-icon.seeding {
 
 .el-table th.el-table__cell {
     color: var(--btr-pink-strong) !important;
-    background-color: rgba(240, 125, 167, 0.1) !important;
+    background-color: transparent !important;
 }
 
 .el-table:is(.is-scrolling-middle, .is-scrolling-right) {

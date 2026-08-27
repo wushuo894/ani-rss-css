@@ -238,7 +238,7 @@ body::after {
 .el-table {
     --el-table-bg-color: transparent;
     --el-table-tr-bg-color: transparent;
-    --el-table-header-bg-color: var(--ani-rss-surface-soft);
+    --el-table-header-bg-color: transparent;
     --el-table-row-hover-bg-color: var(--ani-rss-control);
     --el-table-border-color: var(--ani-rss-border);
     background-color: transparent !important;
@@ -251,7 +251,7 @@ body::after {
 }
 
 .el-table th.el-table__cell {
-    background-color: var(--ani-rss-surface-soft) !important;
+    background-color: transparent !important;
 }
 
 .el-table:is(.is-scrolling-middle, .is-scrolling-right) {
