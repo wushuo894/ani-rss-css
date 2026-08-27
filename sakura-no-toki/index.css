@@ -178,18 +178,6 @@ body::after {
     background: rgba(216, 170, 95, 0.36);
 }
 
-.app-nav,
-.el-card,
-.metric-item,
-.dashboard-section,
-.config-tabs .el-tabs__content,
-.segmented-tabs > .el-tabs__header .el-tabs__nav-wrap {
-    border: 1px solid var(--snt-border) !important;
-    border-radius: 8px !important;
-    background-color: var(--snt-surface) !important;
-    box-shadow: var(--snt-shadow);
-}
-
 .app-nav {
     overflow: hidden;
     border-radius: 0 !important;
