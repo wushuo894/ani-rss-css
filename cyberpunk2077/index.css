@@ -9,6 +9,10 @@
     --cp-panel-soft: rgba(14, 18, 32, 0.66);
     --cp-control: rgba(12, 17, 28, 0.76);
     --cp-control-hover: rgba(31, 36, 47, 0.88);
+    --cp-table-fixed-bg: #0a0d18;
+    --cp-table-fixed-stripe-bg: #16150f;
+    --cp-table-fixed-header-bg: #282914;
+    --cp-table-fixed-hover-bg: #09262e;
     --cp-yellow: #fcee0a;
     --cp-yellow-soft: rgba(252, 238, 10, 0.16);
     --cp-cyan: #00f0ff;
@@ -458,6 +462,31 @@ h3 {
 .el-table th.el-table__cell {
     color: var(--cp-yellow) !important;
     background-color: rgba(252, 238, 10, 0.12) !important;
+}
+
+.el-table__header-wrapper th.el-table-fixed-column--left,
+.el-table__header-wrapper th.el-table-fixed-column--right,
+.el-table__header-wrapper .el-table__fixed-right-patch {
+    background-color: var(--cp-table-fixed-header-bg) !important;
+}
+
+.el-table__body-wrapper td.el-table-fixed-column--left,
+.el-table__body-wrapper td.el-table-fixed-column--right,
+.el-table__footer-wrapper td.el-table-fixed-column--left,
+.el-table__footer-wrapper td.el-table-fixed-column--right {
+    background-color: var(--cp-table-fixed-bg) !important;
+}
+
+.el-table--striped .el-table__body tr.el-table__row--striped td.el-table-fixed-column--left,
+.el-table--striped .el-table__body tr.el-table__row--striped td.el-table-fixed-column--right {
+    background-color: var(--cp-table-fixed-stripe-bg) !important;
+}
+
+.el-table__body tr.hover-row > td.el-table-fixed-column--left,
+.el-table__body tr.hover-row > td.el-table-fixed-column--right,
+.el-table--enable-row-hover .el-table__body tr:hover > td.el-table-fixed-column--left,
+.el-table--enable-row-hover .el-table__body tr:hover > td.el-table-fixed-column--right {
+    background-color: var(--cp-table-fixed-hover-bg) !important;
 }
 
 .el-dialog,

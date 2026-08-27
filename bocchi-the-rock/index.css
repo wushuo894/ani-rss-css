@@ -32,6 +32,10 @@
     --btr-surface-soft: rgba(255, 250, 244, 0.62);
     --btr-control: rgba(255, 251, 247, 0.78);
     --btr-control-hover: rgba(255, 247, 252, 0.94);
+    --btr-table-fixed-bg: #fffaf4;
+    --btr-table-fixed-stripe-bg: #fff6f2;
+    --btr-table-fixed-header-bg: #ffedf3;
+    --btr-table-fixed-hover-bg: #fff3d9;
     --btr-border: rgba(196, 95, 135, 0.2);
     --btr-border-strong: rgba(220, 95, 145, 0.5);
     --btr-shadow: 0 16px 42px rgba(126, 66, 92, 0.16);
@@ -46,6 +50,10 @@ html.dark {
     --btr-surface-soft: rgba(38, 27, 40, 0.66);
     --btr-control: rgba(48, 37, 50, 0.78);
     --btr-control-hover: rgba(62, 48, 64, 0.92);
+    --btr-table-fixed-bg: #261b28;
+    --btr-table-fixed-stripe-bg: #302332;
+    --btr-table-fixed-header-bg: #382638;
+    --btr-table-fixed-hover-bg: #413341;
     --btr-border: rgba(255, 184, 210, 0.2);
     --btr-border-strong: rgba(255, 184, 210, 0.5);
     --btr-ink: #fff8fb;
@@ -547,6 +555,31 @@ html.dark .metric-icon.seeding {
 .el-table th.el-table__cell {
     color: var(--btr-pink-strong) !important;
     background-color: rgba(240, 125, 167, 0.1) !important;
+}
+
+.el-table__header-wrapper th.el-table-fixed-column--left,
+.el-table__header-wrapper th.el-table-fixed-column--right,
+.el-table__header-wrapper .el-table__fixed-right-patch {
+    background-color: var(--btr-table-fixed-header-bg) !important;
+}
+
+.el-table__body-wrapper td.el-table-fixed-column--left,
+.el-table__body-wrapper td.el-table-fixed-column--right,
+.el-table__footer-wrapper td.el-table-fixed-column--left,
+.el-table__footer-wrapper td.el-table-fixed-column--right {
+    background-color: var(--btr-table-fixed-bg) !important;
+}
+
+.el-table--striped .el-table__body tr.el-table__row--striped td.el-table-fixed-column--left,
+.el-table--striped .el-table__body tr.el-table__row--striped td.el-table-fixed-column--right {
+    background-color: var(--btr-table-fixed-stripe-bg) !important;
+}
+
+.el-table__body tr.hover-row > td.el-table-fixed-column--left,
+.el-table__body tr.hover-row > td.el-table-fixed-column--right,
+.el-table--enable-row-hover .el-table__body tr:hover > td.el-table-fixed-column--left,
+.el-table--enable-row-hover .el-table__body tr:hover > td.el-table-fixed-column--right {
+    background-color: var(--btr-table-fixed-hover-bg) !important;
 }
 
 .el-dialog,

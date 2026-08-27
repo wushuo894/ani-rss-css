@@ -17,6 +17,10 @@ html {
     --ani-rss-surface-soft: rgba(255, 255, 255, 0.58);
     --ani-rss-control: rgba(255, 255, 255, 0.74);
     --ani-rss-control-hover: rgba(255, 255, 255, 0.88);
+    --ani-rss-table-fixed-bg: #ffffff;
+    --ani-rss-table-fixed-stripe-bg: #f7f8fa;
+    --ani-rss-table-fixed-header-bg: #eef1f4;
+    --ani-rss-table-fixed-hover-bg: #f1f4f7;
     --ani-rss-border: rgba(255, 255, 255, 0.42);
     --ani-rss-shadow: 0 12px 36px rgba(31, 45, 61, 0.12);
     --ani-rss-overlay: linear-gradient(135deg, rgba(245, 247, 250, 0.28), rgba(245, 247, 250, 0.1));
@@ -45,6 +49,10 @@ html.dark {
     --ani-rss-surface-soft: rgba(29, 30, 31, 0.58);
     --ani-rss-control: rgba(29, 30, 31, 0.74);
     --ani-rss-control-hover: rgba(45, 46, 47, 0.88);
+    --ani-rss-table-fixed-bg: #1d1e1f;
+    --ani-rss-table-fixed-stripe-bg: #252627;
+    --ani-rss-table-fixed-header-bg: #292a2b;
+    --ani-rss-table-fixed-hover-bg: #2d2e2f;
     --ani-rss-border: rgba(255, 255, 255, 0.14);
     --ani-rss-shadow: 0 12px 36px rgba(0, 0, 0, 0.32);
     --ani-rss-overlay: linear-gradient(135deg, rgba(0, 0, 0, 0.36), rgba(0, 0, 0, 0.12));
@@ -244,6 +252,31 @@ body::after {
 
 .el-table th.el-table__cell {
     background-color: var(--ani-rss-surface-soft) !important;
+}
+
+.el-table__header-wrapper th.el-table-fixed-column--left,
+.el-table__header-wrapper th.el-table-fixed-column--right,
+.el-table__header-wrapper .el-table__fixed-right-patch {
+    background-color: var(--ani-rss-table-fixed-header-bg) !important;
+}
+
+.el-table__body-wrapper td.el-table-fixed-column--left,
+.el-table__body-wrapper td.el-table-fixed-column--right,
+.el-table__footer-wrapper td.el-table-fixed-column--left,
+.el-table__footer-wrapper td.el-table-fixed-column--right {
+    background-color: var(--ani-rss-table-fixed-bg) !important;
+}
+
+.el-table--striped .el-table__body tr.el-table__row--striped td.el-table-fixed-column--left,
+.el-table--striped .el-table__body tr.el-table__row--striped td.el-table-fixed-column--right {
+    background-color: var(--ani-rss-table-fixed-stripe-bg) !important;
+}
+
+.el-table__body tr.hover-row > td.el-table-fixed-column--left,
+.el-table__body tr.hover-row > td.el-table-fixed-column--right,
+.el-table--enable-row-hover .el-table__body tr:hover > td.el-table-fixed-column--left,
+.el-table--enable-row-hover .el-table__body tr:hover > td.el-table-fixed-column--right {
+    background-color: var(--ani-rss-table-fixed-hover-bg) !important;
 }
 
 @media (max-width: 560px) {
