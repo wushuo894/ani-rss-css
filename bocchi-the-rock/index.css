@@ -273,7 +273,6 @@ h3 {
 }
 
 .page-header-subtitle,
-.el-text,
 .text-secondary {
     color: var(--btr-muted) !important;
 }

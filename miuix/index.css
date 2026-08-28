@@ -64,7 +64,7 @@
 
     /* 字体 */
     --mx-font: "MiSans", "Mi Sans", -apple-system, "PingFang SC", "Noto Sans SC",
-        "Microsoft YaHei", sans-serif;
+    "Microsoft YaHei", sans-serif;
 }
 
 html.dark {
@@ -181,13 +181,33 @@ body {
 }
 
 /* 4px 细滚动条 */
-::-webkit-scrollbar { width: 4px; height: 4px; }
-::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: var(--mx-s4); border-radius: 2px; }
-::-webkit-scrollbar-thumb:hover { background: var(--mx-t3); }
-* { scrollbar-width: thin; scrollbar-color: var(--mx-s4) transparent; }
+::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+}
 
-::selection { background: var(--mx-primary-glow); color: var(--mx-text); }
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--mx-s4);
+    border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--mx-t3);
+}
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--mx-s4) transparent;
+}
+
+::selection {
+    background: var(--mx-primary-glow);
+    color: var(--mx-text);
+}
 
 /* ---------- 侧边导航 (surface = s1) ---------- */
 .app-nav {
@@ -296,7 +316,6 @@ h3 {
 }
 
 .page-header-subtitle,
-.el-text,
 .text-secondary {
     color: var(--mx-text-variant) !important;
 }
@@ -323,7 +342,9 @@ html.dark .metric-item {
     box-shadow: var(--mx-sh1), inset 0 1px 0 rgba(255, 255, 255, 0.04);
 }
 
-.el-card { --el-card-bg-color: var(--mx-s2); }
+.el-card {
+    --el-card-bg-color: var(--mx-s2);
+}
 
 .el-card__header,
 .el-card__footer {
@@ -341,7 +362,9 @@ html.dark .metric-item {
     -webkit-tap-highlight-color: transparent;
 }
 
-.el-button:active { transform: scale(0.95); }
+.el-button:active {
+    transform: scale(0.95);
+}
 
 .el-button--primary:not(.is-disabled).is-has-bg {
     background: var(--mx-primary) !important;
@@ -543,7 +566,9 @@ html.dark .el-message-box {
     box-shadow: var(--mx-sh3), inset 0 1px 0 rgba(255, 255, 255, 0.04) !important;
 }
 
-.el-dialog { --el-dialog-bg-color: var(--mx-s2); }
+.el-dialog {
+    --el-dialog-bg-color: var(--mx-s2);
+}
 
 .el-dialog__title,
 .el-message-box__title {
@@ -601,10 +626,21 @@ html.dark .el-message-box {
     stroke: currentColor !important;
 }
 
-.metric-icon.subscriptions { background: var(--mx-primary) !important; }
-.metric-icon.enabled { background: var(--mx-green) !important; }
-.metric-icon.downloading { background: var(--mx-amber) !important; }
-.metric-icon.seeding { background: var(--mx-blue) !important; }
+.metric-icon.subscriptions {
+    background: var(--mx-primary) !important;
+}
+
+.metric-icon.enabled {
+    background: var(--mx-green) !important;
+}
+
+.metric-icon.downloading {
+    background: var(--mx-amber) !important;
+}
+
+.metric-icon.seeding {
+    background: var(--mx-blue) !important;
+}
 
 /* ---------- 登录页 ---------- */
 #login-page #form img {
@@ -690,10 +726,18 @@ html.dark #login-page #form {
 }
 
 @media (max-width: 900px) {
-    .app-nav { background: var(--mx-s1) !important; }
+    .app-nav {
+        background: var(--mx-s1) !important;
+    }
 }
 
 @media (max-width: 560px) {
-    .app-brand { min-height: 56px; padding: 0 14px; }
-    .page-header { flex-wrap: wrap; }
+    .app-brand {
+        min-height: 56px;
+        padding: 0 14px;
+    }
+
+    .page-header {
+        flex-wrap: wrap;
+    }
 }

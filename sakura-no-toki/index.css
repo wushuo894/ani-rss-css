@@ -278,7 +278,6 @@ h3 {
 }
 
 .page-header-subtitle,
-.el-text,
 .text-secondary {
     color: var(--snt-muted) !important;
 }
