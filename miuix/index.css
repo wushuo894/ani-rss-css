@@ -607,19 +607,78 @@ html.dark .el-message-box {
 .metric-icon.seeding { background: var(--mx-blue) !important; }
 
 /* ---------- 登录页 ---------- */
-#login-page h2 { color: var(--mx-text) !important; }
+#login-page #form img {
+    display: none !important;
+}
 
-#login-page .el-form,
 #login-page #form {
+    max-width: 360px;
+    width: 90vw;
+    padding: 28px 24px;
+    box-sizing: border-box;
     border: 1px solid var(--mx-divider);
     border-radius: var(--mx-r);
     background: var(--mx-s2);
     box-shadow: var(--mx-sh3);
 }
 
+html.dark #login-page #form {
+    box-shadow: var(--mx-sh3), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+/* "A" squircle logo */
+#login-page #form > div:first-child::before {
+    content: "A";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 68px;
+    height: 68px;
+    margin: 0 auto 12px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, var(--mx-primary), var(--mx-blue));
+    color: #fff;
+    font-size: 32px;
+    font-weight: 700;
+    box-shadow: 0 8px 24px rgba(52, 130, 255, 0.35);
+}
+
+#login-page .title-h2 {
+    color: var(--mx-text) !important;
+    font-weight: 700;
+    margin-bottom: 24px;
+}
+
+/* 卡片统一由 #form 承担，去掉 el-form 的卡片样式 */
+#login-page .el-form {
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+}
+
+#login-page .el-input {
+    width: 100%;
+}
+
+#login-page .action {
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 12px;
+    margin-top: 4px;
+}
+
+#login-page .action .el-button {
+    width: 100%;
+}
+
 #login-page .footer,
 .footer {
     color: var(--mx-text-variant) !important;
+    margin-top: 20px;
+    margin-bottom: 0;
 }
 
 /* ---------- 动效 & 响应式 ---------- */
