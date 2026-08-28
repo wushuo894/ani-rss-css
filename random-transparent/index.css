@@ -22,7 +22,6 @@ html {
     --ani-rss-table-fixed-header-bg: #eef1f4;
     --ani-rss-table-fixed-hover-bg: #f1f4f7;
     --ani-rss-border: rgba(255, 255, 255, 0.42);
-    --ani-rss-shadow: 0 12px 36px rgba(31, 45, 61, 0.12);
     --ani-rss-overlay: linear-gradient(135deg, rgba(245, 247, 250, 0.28), rgba(245, 247, 250, 0.1));
     --ani-rss-title-color: #1f2d3d;
     --ani-rss-title-muted-color: rgba(31, 45, 61, 0.68);
@@ -54,7 +53,6 @@ html.dark {
     --ani-rss-table-fixed-header-bg: #292a2b;
     --ani-rss-table-fixed-hover-bg: #2d2e2f;
     --ani-rss-border: rgba(255, 255, 255, 0.14);
-    --ani-rss-shadow: 0 12px 36px rgba(0, 0, 0, 0.32);
     --ani-rss-overlay: linear-gradient(135deg, rgba(0, 0, 0, 0.36), rgba(0, 0, 0, 0.12));
     --ani-rss-title-color: #f2f3f5;
     --ani-rss-title-muted-color: rgba(242, 243, 245, 0.7);
@@ -112,17 +110,6 @@ body::after {
     body::before {
         background-image: var(--ani-rss-bg-portrait), var(--ani-rss-bg-fallback);
     }
-}
-
-.app-nav,
-.el-card,
-.metric-item,
-.dashboard-section,
-.config-tabs .el-tabs__content,
-.segmented-tabs > .el-tabs__header .el-tabs__nav-wrap {
-    border-color: var(--ani-rss-border) !important;
-    background-color: var(--ani-rss-surface) !important;
-    box-shadow: var(--ani-rss-shadow);
 }
 
 .app-nav {
