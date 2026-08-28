@@ -38,6 +38,10 @@ bocchi-the-rock/
 sakura-no-toki/
   index.css
   assets/
+
+miuix/
+  index.css
+  index.js
 ```
 
 ## 主题列表
@@ -50,6 +54,7 @@ sakura-no-toki/
 | Cyberpunk 2077     | `cyberpunk2077/index.css`      | 赛博朋克 2077 风格主题，使用 Cyberpunk.net 背景图和 Logo，本地化后配合扫描线与高对比控件。    |
 | Bocchi the Rock!   | `bocchi-the-rock/index.css`    | 孤独摇滚风格主题，使用官方 PC 壁纸、移动端主视觉图和 Logo，本地化后配合粉/黄/蓝乐队配色。     |
 | Sakura no Toki     | `sakura-no-toki/index.css`     | 樱之刻风格主题，使用官网樱花主视觉图和 Logo，两张背景图会定时柔和切换。                       |
+| Miuix (HyperOS)    | `miuix/index.css`              | 小米 HyperOS / Miuix 设计风格主题，配色取自 Miuix 官方 ColorScheme，分层表面 + 大圆角 + 弹簧动画，自适应明暗。可选 `miuix/index.js` 提供平滑圆角与水波纹。 |
 
 ## 常用导入
 
@@ -89,10 +94,17 @@ Sakura no Toki：
 @import url("https://ani-rss-css.wushuo.top/sakura-no-toki/index.css");
 ```
 
+Miuix (HyperOS)：
+
+```css
+@import url("https://ani-rss-css.wushuo.top/miuix/index.css");
+```
+
 ## 资源说明
 
 - 静态远程资源已下载到对应主题的 `assets/` 目录，并通过相对路径引用。
 - 图片资源尽量同时提供原图、WebP 和 AVIF；CSS 中使用 `image-set()` 让浏览器自动选择更合适的格式。
 - `random-transparent` 依赖随机图片接口，这类动态资源保留远程访问；主题内仍有渐变兜底，接口慢或失败时不会露出空白背景。
 - 中文 CSS 文件名已迁移为英文目录入口，例如旧的 `我的世界.css` 现在对应 `minecraft/index.css`。
+- `miuix` 主题还附带可选增强脚本 `miuix/index.js`（平滑圆角、按钮水波纹、品牌名归一），需手动粘贴到 ANI-RSS 的「自定义 JS」输入框；不粘贴也能正常使用该主题。
 - 主题更新后如果页面没有变化，尝试强制刷新浏览器缓存。
