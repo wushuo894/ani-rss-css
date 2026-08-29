@@ -4,13 +4,11 @@
 :root {
     --btr-bg-desktop: image-set(
             url("./assets/background-desktop.avif") type("image/avif"),
-            url("./assets/background-desktop.webp") type("image/webp"),
-            url("./assets/background-desktop.jpg") type("image/jpeg")
+            url("./assets/background-desktop.webp") type("image/webp")
     );
     --btr-bg-mobile: image-set(
             url("./assets/background.avif") type("image/avif"),
-            url("./assets/background.webp") type("image/webp"),
-            url("./assets/background.jpg") type("image/jpeg")
+            url("./assets/background.webp") type("image/webp")
     );
     --btr-bg-image: var(--btr-bg-desktop);
     --btr-logo: url("./assets/logo.svg");
@@ -226,7 +224,7 @@ body:has(#login-page)::before {
 .app-menu .el-menu-item,
 .el-menu-item {
     border: 1px solid transparent !important;
-    border-radius: 7px !important;
+    border-radius: 8px !important;
     color: var(--btr-muted) !important;
     background-color: transparent !important;
     letter-spacing: 0;
@@ -303,7 +301,7 @@ h3 {
 }
 
 .el-button {
-    border-radius: 7px !important;
+    border-radius: 8px !important;
     box-shadow: none !important;
     font-weight: 700;
     letter-spacing: 0;
@@ -373,7 +371,7 @@ h3 {
 .el-input__wrapper,
 .el-select__wrapper,
 .el-textarea__inner {
-    border-radius: 7px !important;
+    border-radius: 8px !important;
     box-shadow: 0 0 0 1px var(--btr-border) inset !important;
 }
 
@@ -403,7 +401,7 @@ h3 {
 .el-color-picker__trigger,
 .el-color-picker__color,
 .el-color-picker__color-inner {
-    border-radius: 7px !important;
+    border-radius: 8px !important;
 }
 
 .el-checkbox__inner,
@@ -423,7 +421,7 @@ h3 {
 }
 
 .el-tag {
-    border-radius: 7px !important;
+    border-radius: 8px !important;
     border-color: rgba(220, 95, 145, 0.28) !important;
     background-color: rgba(240, 125, 167, 0.13) !important;
     color: var(--btr-pink-strong) !important;
@@ -448,7 +446,7 @@ h3 {
 }
 
 .segmented-tabs > .el-tabs__header .el-tabs__item {
-    border-radius: 7px !important;
+    border-radius: 8px !important;
     color: var(--btr-muted) !important;
 }
 

@@ -4,13 +4,11 @@
 :root {
     --mygo-bg-login: image-set(
             url("./assets/key-visual.avif") type("image/avif"),
-            url("./assets/key-visual.webp") type("image/webp"),
-            url("./assets/key-visual.png") type("image/png")
+            url("./assets/key-visual.webp") type("image/webp")
     );
     --mygo-bg-main: image-set(
             url("./assets/key-visual.avif") type("image/avif"),
-            url("./assets/key-visual.webp") type("image/webp"),
-            url("./assets/key-visual.png") type("image/png")
+            url("./assets/key-visual.webp") type("image/webp")
     );
     --mygo-bg-portrait: var(--mygo-bg-login);
     --mygo-logo: url("./assets/logo.svg");

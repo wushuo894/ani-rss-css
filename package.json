@@ -1,0 +1,13 @@
+{
+  "name": "ani-rss-css",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "vite build"
+  },
+  "devDependencies": {
+    "vite": "^8.2.2",
+    "vite-plugin-compression": "^0.5.1"
+  }
+}

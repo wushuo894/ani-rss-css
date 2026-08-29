@@ -3,6 +3,15 @@
 这里收集了一些可直接用于 ANI-RSS 的自定义 CSS 主题。主题已按英文目录整理，每个主题入口统一为 `index.css`，资源放在主题自己的
 `assets/` 目录里。
 
+## 构建
+
+```bash
+pnpm install
+pnpm build
+```
+
+构建会递归查找所有主题的 `index.css`，将本地 `@import` 模块合并、压缩后输出到 `dist/`，同时保持原有主题目录结构以及图片、字体、SVG 等资源的路径和文件名。构建入口直接使用 CSS，不需要 `index.html`；部署时请将 `dist/` 作为站点根目录。
+
 ## 使用方法
 
 在 ANI-RSS 的自定义 CSS 中填入一行 `@import` 即可：
@@ -39,6 +48,17 @@ sakura-no-toki/
   index.css
   assets/
 
+sakura-no-toki-2/
+  index.css
+  README.md
+  ai/
+  honma/
+  makoto/
+  rin/
+  rina/
+  shizuku/
+  yuumi/
+
 senren-banka/
   index.css
   assets/
@@ -50,15 +70,16 @@ miuix/
 
 ## 主题列表
 
-| 主题               | 入口                           | 说明                                                                                          |
-|--------------------|--------------------------------|-----------------------------------------------------------------------------------------------|
-| MyGO               | `mygo/index.css`               | MyGO 风格主题，背景图和 Logo 已本地化到 `mygo/assets/`，背景优先使用 AVIF/WebP。              |
-| Random Transparent | `random-transparent/index.css` | 随机二次元背景图透明主题，横屏/竖屏使用随机图片接口，保留柔和渐变兜底。                       |
-| Minecraft          | `minecraft/index.css`          | 我的世界风格主题，背景图、苦力怕 SVG 已本地化到 `minecraft/assets/`，背景优先使用 AVIF/WebP。 |
-| Cyberpunk 2077     | `cyberpunk2077/index.css`      | 赛博朋克 2077 风格主题，使用 Cyberpunk.net 背景图和 Logo，本地化后配合扫描线与高对比控件。    |
-| Bocchi the Rock!   | `bocchi-the-rock/index.css`    | 孤独摇滚风格主题，使用官方 PC 壁纸、移动端主视觉图和 Logo，本地化后配合粉/黄/蓝乐队配色。     |
-| Sakura no Toki     | `sakura-no-toki/index.css`     | 樱之刻风格主题，使用官网樱花主视觉图和 Logo，两张背景图会定时柔和切换。                       |
-| Senren Banka       | `senren-banka/index.css`       | 千恋＊万花风格主题，使用官网芳乃壁纸和 Logo，桌面/竖屏自适应，搭配朱红、金与青蓝和风配色。    |
+| 主题               | 入口                           | 说明                                                                                                                                                       |
+|--------------------|--------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| MyGO               | `mygo/index.css`               | MyGO 风格主题，背景图和 Logo 已本地化到 `mygo/assets/`，背景优先使用 AVIF/WebP。                                                                           |
+| Random Transparent | `random-transparent/index.css` | 随机二次元背景图透明主题，横屏/竖屏使用随机图片接口，保留柔和渐变兜底。                                                                                    |
+| Minecraft          | `minecraft/index.css`          | 我的世界风格主题，背景图、苦力怕 SVG 已本地化到 `minecraft/assets/`，背景优先使用 AVIF/WebP。                                                              |
+| Cyberpunk 2077     | `cyberpunk2077/index.css`      | 赛博朋克 2077 风格主题，使用 Cyberpunk.net 背景图和 Logo，本地化后配合扫描线与高对比控件。                                                                 |
+| Bocchi the Rock!   | `bocchi-the-rock/index.css`    | 孤独摇滚风格主题，使用官方 PC 壁纸、移动端主视觉图和 Logo，本地化后配合粉/黄/蓝乐队配色。                                                                  |
+| Sakura no Toki     | `sakura-no-toki/index.css`     | 樱之刻风格主题，使用官网樱花主视觉图和 Logo，两张背景图会定时柔和切换。                                                                                    |
+| Sakura no Toki 2   | `sakura-no-toki-2/README.md`   | 樱之刻多壁纸主题，7 个角色变体共用根目录样式，桌面与移动端壁纸均提供 AVIF 和 WebP。                                                                        |
+| Senren Banka       | `senren-banka/index.css`       | 千恋＊万花风格主题，使用官网芳乃壁纸和 Logo，桌面/竖屏自适应，搭配朱红、金与青蓝和风配色。                                                                 |
 | Miuix (HyperOS)    | `miuix/index.css`              | 小米 HyperOS / Miuix 设计风格主题，配色取自 Miuix 官方 ColorScheme，分层表面 + 大圆角 + 弹簧动画，自适应明暗。可选 `miuix/index.js` 提供平滑圆角与水波纹。 |
 
 ## 常用导入
@@ -99,6 +120,12 @@ Sakura no Toki：
 @import url("https://ani-rss-css.wushuo.top/sakura-no-toki/index.css");
 ```
 
+Sakura no Toki 2（以 `ai` 为例，其他变体见 `sakura-no-toki-2/README.md`）：
+
+```css
+@import url("https://ani-rss-css.wushuo.top/sakura-no-toki-2/ai/index.css");
+```
+
 Senren Banka（千恋＊万花）：
 
 ```css
@@ -118,5 +145,6 @@ Miuix (HyperOS)：
 - `senren-banka` 使用《千恋＊万花》官网下载页提供的芳乃壁纸；官网注明可在个人使用范围内自由使用。
 - `random-transparent` 依赖随机图片接口，这类动态资源保留远程访问；主题内仍有渐变兜底，接口慢或失败时不会露出空白背景。
 - 中文 CSS 文件名已迁移为英文目录入口，例如旧的 `我的世界.css` 现在对应 `minecraft/index.css`。
-- `miuix` 主题还附带可选增强脚本 `miuix/index.js`（平滑圆角、按钮水波纹、品牌名归一），需手动粘贴到 ANI-RSS 的「自定义 JS」输入框；不粘贴也能正常使用该主题。
+- `miuix` 主题还附带可选增强脚本 `miuix/index.js`（平滑圆角、按钮水波纹、品牌名归一），需手动粘贴到 ANI-RSS 的「自定义
+  JS」输入框；不粘贴也能正常使用该主题。
 - 主题更新后如果页面没有变化，尝试强制刷新浏览器缓存。

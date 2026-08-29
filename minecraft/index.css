@@ -34,8 +34,7 @@
     --mc-block-size: 48px;
     --mc-bg-image: image-set(
             url("./assets/background.avif") type("image/avif"),
-            url("./assets/background.webp") type("image/webp"),
-            url("./assets/background.jpg") type("image/jpeg")
+            url("./assets/background.webp") type("image/webp")
     );
     --mc-bg-fallback: linear-gradient(180deg, var(--mc-sky-top) 0%, var(--mc-sky-bottom) 54%, var(--mc-grass) 54%, var(--mc-grass) 66%, var(--mc-dirt) 66%, var(--mc-dirt-dark) 100%);
     --mc-bg-tint: linear-gradient(180deg, rgba(248, 253, 255, 0.06), rgba(22, 50, 29, 0.28));

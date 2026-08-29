@@ -70,7 +70,9 @@
                         var els = [];
                         if (node.matches && node.matches(SMOOTH_SEL)) els.push(node);
                         if (node.querySelectorAll) {
-                            node.querySelectorAll(SMOOTH_SEL).forEach(function (e) { els.push(e); });
+                            node.querySelectorAll(SMOOTH_SEL).forEach(function (e) {
+                                els.push(e);
+                            });
                         }
                         els.forEach(function (el) {
                             applySmooth(el);
@@ -78,7 +80,7 @@
                         });
                     });
                 });
-            }).observe(document.body, { childList: true, subtree: true });
+            }).observe(document.body, {childList: true, subtree: true});
         }
     }
 
@@ -104,7 +106,9 @@
             if (getComputedStyle(btn).position === "static") btn.style.position = "relative";
             btn.style.overflow = "hidden";
             btn.appendChild(ink);
-            setTimeout(function () { ink.remove(); }, 600);
+            setTimeout(function () {
+                ink.remove();
+            }, 600);
         });
     }
 

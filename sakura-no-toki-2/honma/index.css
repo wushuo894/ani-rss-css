@@ -1,0 +1,13 @@
+@import url("../index.css");
+
+/* 本间心铃 */
+:root {
+    --snt2-bg-desktop: image-set(
+            url("./assets/background.avif") type("image/avif"),
+            url("./assets/background.webp") type("image/webp")
+    );
+    --snt2-bg-mobile: image-set(
+            url("./assets/background-mobile.avif") type("image/avif"),
+            url("./assets/background-mobile.webp") type("image/webp")
+    );
+}
